@@ -209,11 +209,24 @@ listaItems.forEach(item => {
 		});
 		}
 		else if(id === "delete") {
-			const dialogoHTML = `
-			<dialog id="dialogo">
-				<h2>Título de logo</h2>
-				<p>Este es un ejemplo de contenido para una ventana de diálogo.</p>
-				<button id="btnCerrar">Cerrar</button>
+			const dialogoHTML =  `
+			<dialog id="dialogo" class="dialogo">
+			
+				<section class="titleAdd">
+					<h2>Editar Producto <button id="btnCerrar">X</button></h2>
+				</section>
+				<form id="searchForm">
+					<input type="text" id="searchInput" placeholder="Que producto Busca....">
+					<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+				</form> 
+				
+				<section class="infoE">
+				
+				
+
+				</section>
+				
+				<button id="guardar" class="btnCerrar">Guardar</button>
 			</dialog>
 		`;
 		document.body.insertAdjacentHTML('beforeend', dialogoHTML);
@@ -227,11 +240,24 @@ listaItems.forEach(item => {
 		});
 		}
 		else if(id === "search") {
-			const dialogoHTML = `
-			<dialog id="dialogo">
-				<h2>Diálogo</h2>
-				<p>Este es un ejemplo de contenido para una ventana de diálogo.</p>
-				<button id="btnCerrar">Cerrar</button>
+			const dialogoHTML =  `
+			<dialog id="dialogo" class="dialogo">
+			
+				<section class="titleAdd">
+					<h2>Editar Producto <button id="btnCerrar">X</button></h2>
+				</section>
+				<form id="searchForm">
+					<input type="text" id="searchInput" placeholder="Que producto Busca....">
+					<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+				</form> 
+				
+				<section class="infoE">
+				
+				
+
+				</section>
+				
+				<button id="guardar" class="btnCerrar">Guardar</button>
 			</dialog>
 		`;
 		document.body.insertAdjacentHTML('beforeend', dialogoHTML);
