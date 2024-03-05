@@ -153,7 +153,7 @@ listaItems.forEach(item => {
 
 					</section>
                     
-                    <button id="guardar">Guardar</button>
+					<button id="guardar" class="btnCerrar">Guardar</button>
                 </dialog>
             `;
             document.body.insertAdjacentHTML('beforeend', dialogoHTML);
@@ -165,6 +165,12 @@ listaItems.forEach(item => {
                 dialogo.close();
                 dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
             });
+			const btnCerrara = dialogo.querySelector(".btnCerrar");
+            btnCerrara.addEventListener('click', function () {
+                dialogo.close();
+                dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
+            });
+
         }
         else if(id === "edit") {
 			const dialogoHTML = `
