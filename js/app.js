@@ -142,14 +142,53 @@ listaItems.forEach(item => {
 				    <section class="titleAdd"> <h2>Agrega Nuevo Producto <button id="btnCerrar">X</button></h2></section>
 					
 					<section class="info">
-					<p>Activos</p><input type="text" autofocus>
-					<p>Marcas</p><input type="text">
-					<p>Persona</p><input type="text">
-					<p>Estado</p><input type="text">
-					<p>TipoPersona</p><input type="text">
-					<p>TipoMovAct</p><input type="text">
-					<p>TipoActivo</p><input type="text">
+					<p>CodTransaccion</p><input type="text" autofocus>
+					<p>NroFormulario</p><input type="text">
 					
+					<p>idMarca</p>
+					<select class="form-control" id="urgencyInput">
+						<option > LG </option>
+						<option > COMPUMAX </option>
+						<option >  BENQ </option>
+						<option >  ASUS </option>
+						<option >  LENOVO </option>
+						<option >  HP </option>
+				  	</select>
+					
+
+					<p>idCategoria</p>
+					<select class="form-control" id="urgencyInput">
+					  <option > Equipo de Computo </option>
+					  <option > Electrodomestico </option>
+					  <option > Juego </option>
+					</select>
+
+
+					<p>idTipo</p>
+					<select class="form-control" id="urgencyInput">
+					  <option > Monitor </option>
+					  <option > CPU </option>
+					  <option > Teclado </option>
+					  <option > Mouse </option>
+					  <option > Aire Acondicionado </option>
+					  <option > Portatil </option>
+					  <option > Impresora </option>
+					</select>
+
+					
+					<p>Valor Unitario</p><input type="text">
+					<p>idProveedor</p><input type="text">
+					<p>Nro Serial</p><input type="text">
+					<p>idEmpresaResponsable</p><input type="text">
+
+					<p>idEstado					</p>
+					<select class="form-control" id="urgencyInput">
+					  <option >No Asignado</option>
+					  <option >Asignado</option>
+					  <option >Dado de Baja por Daño</option>
+					  <option >En Reparación y/o garantia</option>
+					</select>
+
 
 					</section>
                     
@@ -182,14 +221,13 @@ listaItems.forEach(item => {
 				<form id="searchForm">
 					<input type="text" id="searchInput" placeholder="Que producto Busca....">
 					<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-				</form> 
-				
+				</form>
 				<section class="infoE">
-				
-				
-
+					<p>Agregar</p><input type="text">
+					<p>Editar</p><input type="text">
+					<p>Eliminar</p><input type="text">
+					<p>Buscar</p><input type="text">
 				</section>
-				
 				<button id="guardar" class="btnCerrar">Guardar</button>
 			</dialog>
 		`;
@@ -211,7 +249,6 @@ listaItems.forEach(item => {
 		else if(id === "delete") {
 			const dialogoHTML =  `
 			<dialog id="dialogo" class="dialogo">
-			
 				<section class="titleAdd">
 					<h2>Editar Producto <button id="btnCerrar">X</button></h2>
 				</section>
@@ -219,13 +256,10 @@ listaItems.forEach(item => {
 					<input type="text" id="searchInput" placeholder="Que producto Busca....">
 					<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 				</form> 
-				
-				<section class="infoE">
-				
-				
-
+				<section class="infoBorar">
+					<div>info</div>
+					<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
 				</section>
-				
 				<button id="guardar" class="btnCerrar">Guardar</button>
 			</dialog>
 		`;
@@ -275,14 +309,40 @@ listaItems.forEach(item => {
 		}
     });
 
-	// const searchInput = document.getElementById('searchInput');
-    // searchInput.addEventListener('input', function(event) {
-    //     const searchTerm = event.target.value.toLowerCase().trim(); 
+	const searchInput = document.getElementById('searchInput');
+	let products = []; // Array para almacenar los productos
+	
 
-    //     const filteredDCCharacters = personajesDC.filter(personaje => {
-    //         return personaje.nombre.toLowerCase().includes(searchTerm);
-    //     });
-    //     dcContainer.innerHTML = ''; 
-    //     agregarPersonajes( dcContainer); 
-    // });
+	fetch('inventario.json')
+		.then(response => response.json())
+		.then(data => {
+			products = data; // Almacenar los productos en el array products
+		})
+		.catch(error => {
+			console.error('Error al cargar los productos:', error);
+		});
+	
+	searchInput.addEventListener('input', function(event) {
+		const searchTerm = event.target.value.toLowerCase().trim();
+	
+		const filteredProducts = products.filter(product => {
+			return product.name.toLowerCase().includes(searchTerm);
+		});
+	});
+	
+	function displayFilteredProducts(filteredProducts) {
+		const dialogo = document.getElementById('dialogo'); // Obtener la referencia al diálogo
+	
+		// Limpiar el contenido existente dentro del diálogo
+		const infoE = dialogo.querySelector('.infoE');
+		infoE.innerHTML = '';
+	
+		// Construir y agregar los elementos de producto al diálogo
+		filteredProducts.forEach(product => {
+			const productElement = document.createElement('div');
+			productElement.textContent = `${product.name} - $${product.price}`;
+			infoE.appendChild(productElement);
+		});
+	}
+	
 });

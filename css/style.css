@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
+/* Resetea Estilos */
 * {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
@@ -8,6 +9,7 @@
     user-select: none;
 }
 
+/* Estilos Universales */
 :root {
 	--grey: #F1F0F6;
 	--dark-grey: #24242410;
@@ -51,10 +53,9 @@ p{
     padding: 10px;
 	font-weight: 500;
 }
-.section-p1 {
-	padding: 40px 80px;
-}
 
+
+/* ventana emergente*/
 #dialogo {
     top: 50%;
     left: 50%;
@@ -77,38 +78,53 @@ p{
     height: auto;
     
 }
+
 .info{
-    display: grid;
-    grid-template-columns: 15% 85%;
-    
+	display: grid;
+	grid-template-columns: 25% 70%;
 }
 
-.info input{
+.info input,
+.info select{
 	margin-top: 10px;
 	width: 98%;
-	border-radius: 10px;
-	
+	border: none;
+	border-bottom: 1px solid #333;
 }
 
+.info input:focus,
+.info select:focus{
+	outline: none;
+    border: none;
+	border-bottom: 1px solid #333;
+}
 
 .titleAdd{
     background: #0b4481;
 }
 
+/* botones de las ventanas*/
 #btnCerrar{
 	top: 5px;
-    
     width: 20px;
 	right: 5px;
     position: fixed;
 	border: none;
-	border-radius: 50%;
 	background: none;
 	color: white;
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 15px;
 }
-
+#btnBorrar{
+	margin: 2px;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+	transition: all 0.5s ease;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 #guardar{
     margin: 10px;
@@ -122,21 +138,34 @@ p{
 }
 
 #guardar:hover,
-#btnCerrar:hover{
-	border-radius: 15px;
-	 transform: scale(1.2);
+#btnBorrar:hover{
+	border-radius: 8px;
+	 transform: scale(0.9);
 	 color: white
  }
  #btnCerrar:hover{
+	border-radius: 50%;
+	font-size: 15px;
     background-color: #ff0000;
-	width: 20px;
-	height: 30px;
-
+	transform: scale(0.9);
  }
+
+ #btnBorrar:hover{
+	background-color: #ff0000;
+}
+
  #guardar:hover{
     background-color: #1e9e05;
  }
- 
+
+.infoBorar{
+	display: flex;
+    justify-content: space-around;
+    margin: 50PX;
+    width: 894px;
+    height: 294px;
+    border: #000 solid 2PX;
+}
 
 .infoE{
     display: grid;
@@ -144,9 +173,16 @@ p{
     margin: 50PX;
     width: 894px;
     height: 294px;
+	align-items: center;
     border: #000 solid 2PX;
     
 } 
+
+.infoE input{
+	height: 40px;
+	margin: 10px;
+}
+
 
 /*  search */
 #searchInput {
@@ -166,8 +202,7 @@ p{
     border: none;
 }
 
-#searchInput:focus,
-.info input:focus {
+#searchInput:focus {
     width: 250px;
     background-color: white;
 }
@@ -480,6 +515,7 @@ nav .profile .profile-link a:hover {
 
 
 
+/* Responsive */
 @media screen and (max-width: 768px) {
 	#content {
 		position: relative;
