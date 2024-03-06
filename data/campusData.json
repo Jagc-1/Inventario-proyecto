@@ -1,11 +1,16 @@
 {
     "Inventario Campuslands":[{}],
-    "Activos":[{}],
-    "Inventario Campuslands":[{}],
-    "Inventario Campuslands":[{}],
-    "Inventario Campuslands":[{}],
-    "Inventario Campuslands":[{}],
-    "Inventario Campuslands":[{}],
-    "Inventario Campuslands":[{}]
+    "categoriaActivos":[{}],
+    "Marcas":[{}],
+    "tipoPersona":[{}],
+    "tipoMovActivo":[{}],
+    "historialActivo":[{}],
+    "proveedor":[{}],
+    "estado":[{}],
+    "telefonoPersona":[{}],
+    "asignacion":[{}],
+    "tipoActivo":[{}],
+    "personas":[{}],
+    "detalleMovimiento":[{}]
  
 }
