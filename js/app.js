@@ -313,7 +313,7 @@ listaItems.forEach(item => {
 	let products = []; // Array para almacenar los productos
 	
 
-	fetch('inventario.json')
+	fetch('./../data/campusData.json')
 		.then(response => response.json())
 		.then(data => {
 			products = data; // Almacenar los productos en el array products
