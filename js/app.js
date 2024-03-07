@@ -142,22 +142,22 @@ listaItems.forEach(item => {
 				    <section class="titleAdd"> <h2>Agrega Nuevo Producto <button id="btnCerrar">X</button></h2></section>
 					
 					<section class="info">
-					<p>CodTransaccion</p><input type="text" autofocus>
-					<p>NroFormulario</p><input type="text">
+					<p>CodTransaccion</p><input id="idTransation" type="text" autofocus>
+					<p>NroFormulario</p><input id="Nform" type="text">
 					
 					<p>idMarca</p>
-					<select class="form-control" id="urgencyInput">
-						<option > LG </option>
-						<option > COMPUMAX </option>
-						<option >  BENQ </option>
-						<option >  ASUS </option>
-						<option >  LENOVO </option>
-						<option >  HP </option>
+					<select class="form-control" id="idMarca">
+						<option value="LG"> LG </option>
+						<option value="COMPUMAX"> COMPUMAX </option>
+						<option value="BENO">  BENO </option>
+						<option value="ASUS">  ASUS </option>
+						<option value="LENOVO">  LENOVO </option>
+						<option value="HP">  HP </option>
 				  	</select>
 					
 
 					<p>idCategoria</p>
-					<select class="form-control" id="urgencyInput">
+					<select class="form-control" id="idCategory">
 					  <option > Equipo de Computo </option>
 					  <option > Electrodomestico </option>
 					  <option > Juego </option>
@@ -165,24 +165,24 @@ listaItems.forEach(item => {
 
 
 					<p>idTipo</p>
-					<select class="form-control" id="urgencyInput">
-					  <option > Monitor </option>
-					  <option > CPU </option>
-					  <option > Teclado </option>
-					  <option > Mouse </option>
-					  <option > Aire Acondicionado </option>
-					  <option > Portatil </option>
-					  <option > Impresora </option>
+					<select class="form-control" id="idTipe">
+					  <option value="Monitor"> Monitor </option>
+					  <option value="CPU"> CPU </option>
+					  <option value="Teclado"> Teclado </option>
+					  <option value="Mouse"> Mouse </option>
+					  <option value="Aire Ac"> Aire Acondicionado </option>
+					  <option value="Portatil"> Portatil </option>
+					  <option value="Impresora"> Impresora </option>
 					</select>
 
 					
-					<p>Valor Unitario</p><input type="text">
-					<p>idProveedor</p><input type="text">
-					<p>Nro Serial</p><input type="text">
-					<p>idEmpresaResponsable</p><input type="text">
+					<p>Valor Unitario</p><input id="idValor" type="text">
+					<p>idProveedor</p><input id="idProveedor"type="text">
+					<p>Nro Serial</p><input id="idSerial"type="text">
+					<p>idEmpresaResponsable</p><input id="idEnterprise" type="text">
 
 					<p>idEstado					</p>
-					<select class="form-control" id="urgencyInput">
+					<select class="form-control" id="idEstate">
 					  <option >No Asignado</option>
 					  <option >Asignado</option>
 					  <option >Dado de Baja por Daño</option>
@@ -198,7 +198,60 @@ listaItems.forEach(item => {
             document.body.insertAdjacentHTML('beforeend', dialogoHTML);
             const dialogo = document.getElementById("dialogo");
             dialogo.showModal();
+			const guardar = document.getElementById("guardar");
+			guardar.addEventListener('click', function () {
+				
+				 
+				const datosAGuardar = {
+				
+						CodTransaccion: document.getElementById("idTransation").value,
+						NFormulario: document.getElementById("Nform").value,
+						idMarca: document.getElementById("idMarca").value,
+						idCategoria: document.getElementById("idCategory").value,
+						idTipo: document.getElementById("idTipe").value,
+						ValorUnitario: document.getElementById("idValor").value,
+						idProveedor: document.getElementById("idProveedor").value,
+						serial: document.getElementById("idSerial").value,
+						idEmpresaResponsable: document.getElementById("idEnterprise").value,
+						idEstado: document.getElementById("idEstate").value
+					
+					
 
+					// Agrega más campos según sea necesario
+				};
+			
+				// Realizar una solicitud HTTP POST al servidor JSON usando fetch
+				fetch('http://localhost:3000/Inventario%20Campuslands', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(datosAGuardar),
+				})
+				.then(response => {
+					if (!response.ok) {
+						throw new Error('No se pudo realizar la solicitud al servidor JSON');
+					}
+					return response.json();
+				})
+				.then(data => {
+					// Aquí puedes manejar la respuesta del servidor si lo deseas
+					console.log('Datos guardados correctamente:', data);
+					alert('Datos guardados correctamente');
+					alert(idTrans);
+				})
+				.catch(error => {
+					console.error('Error al guardar datos:', error);
+					alert('Error al guardar datos');
+				});
+
+
+
+
+
+
+
+			});
             const btnCerrar = dialogo.querySelector("#btnCerrar");
             btnCerrar.addEventListener('click', function () {
                 dialogo.close();
@@ -266,12 +319,16 @@ listaItems.forEach(item => {
 		document.body.insertAdjacentHTML('beforeend', dialogoHTML);
 		const dialogo = document.getElementById("dialogo");
 		dialogo.showModal();
-
+		const guardar = document.getElementById("guardar");
+		guardar.addEventListener('click', function () {
+			alert("Guardar");
+		});
 		const btnCerrar = dialogo.querySelector("#btnCerrar");
 		btnCerrar.addEventListener('click', function () {
 			dialogo.close();
 			dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
 		});
+		
 		}
 		else if(id === "search") {
 			const dialogoHTML =  `
@@ -308,41 +365,42 @@ listaItems.forEach(item => {
 			alert('Lo siento Error 404 :(')
 		}
     });
-
-	const searchInput = document.getElementById('searchInput');
-	let products = []; // Array para almacenar los productos
 	
 
-	fetch('./../data/campusData.json')
-		.then(response => response.json())
-		.then(data => {
-			products = data; // Almacenar los productos en el array products
-		})
-		.catch(error => {
-			console.error('Error al cargar los productos:', error);
-		});
+	// const searchInput = document.getElementById('searchInput');
+	// let products = []; // Array para almacenar los productos
 	
-	searchInput.addEventListener('input', function(event) {
-		const searchTerm = event.target.value.toLowerCase().trim();
+
+	// fetch('./../data/campusData.json')
+	// 	.then(response => response.json())
+	// 	.then(data => {
+	// 		products = data; // Almacenar los productos en el array products
+	// 	})
+	// 	.catch(error => {
+	// 		console.error('Error al cargar los productos:', error);
+	// 	});
 	
-		const filteredProducts = products.filter(product => {
-			return product.name.toLowerCase().includes(searchTerm);
-		});
-	});
+	// searchInput.addEventListener('input', function(event) {
+	// 	const searchTerm = event.target.value.toLowerCase().trim();
 	
-	function displayFilteredProducts(filteredProducts) {
-		const dialogo = document.getElementById('dialogo'); // Obtener la referencia al diálogo
+	// 	const filteredProducts = products.filter(product => {
+	// 		return product.name.toLowerCase().includes(searchTerm);
+	// 	});
+	// });
 	
-		// Limpiar el contenido existente dentro del diálogo
-		const infoE = dialogo.querySelector('.infoE');
-		infoE.innerHTML = '';
+	// function displayFilteredProducts(filteredProducts) {
+	// 	const dialogo = document.getElementById('dialogo'); // Obtener la referencia al diálogo
 	
-		// Construir y agregar los elementos de producto al diálogo
-		filteredProducts.forEach(product => {
-			const productElement = document.createElement('div');
-			productElement.textContent = `${product.name} - $${product.price}`;
-			infoE.appendChild(productElement);
-		});
-	}
+	// 	// Limpiar el contenido existente dentro del diálogo
+	// 	const infoE = dialogo.querySelector('.infoE');
+	// 	infoE.innerHTML = '';
+	
+	// 	// Construir y agregar los elementos de producto al diálogo
+	// 	filteredProducts.forEach(product => {
+	// 		const productElement = document.createElement('div');
+	// 		productElement.textContent = `${product.name} - $${product.price}`;
+	// 		infoE.appendChild(productElement);
+	// 	});
+	// }
 	
 });
