@@ -1,90 +1,29 @@
 {
   "Inventario Campuslands": [
     {
-      "id": "kjbiut2hig",
-      "CodTransaccion": "fdsa",
-      "NFormulario": "sdf",
+      "id": "",
+      "CodTransaccion": "",
+      "NFormulario": "",
       "idMarca": "LG",
       "idCategoria": "Equipo de Computo",
       "idTipo": "Monitor",
-      "ValorUnitario": "asdf",
-      "idProveedor": "sdaf",
-      "serial": "fasfd",
-      "idEmpresaResponsable": "sdfa",
-      "idEstado": "Asignado"
-    },
-    {
-      "id": "sdf45645646",
-      "CodTransaccion": "fadsf",
-      "NFormulario": "fsdf",
-      "idMarca": "LG",
-      "idCategoria": "Equipo de Computo",
-      "idTipo": "Monitor",
-      "ValorUnitario": "sdfa",
-      "idProveedor": "asdf",
-      "serial": "sdf45645646",
-      "idEmpresaResponsable": "sdf",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "",
+      "idEmpresaResponsable": "",
       "idEstado": "No Asignado"
     }
   ],
-  "categoriaActivos": [
-    {
-      "id": "7f3c"
-    }
-  ],
-  "Marcas": [
-    {
-      "id": "15da"
-    }
-  ],
-  "tipoPersona": [
-    {
-      "id": "29f9"
-    }
-  ],
-  "tipoMovActivo": [
-    {
-      "id": "0705"
-    }
-  ],
-  "historialActivo": [
-    {
-      "id": "8a83"
-    }
-  ],
-  "proveedor": [
-    {
-      "id": "1e34"
-    }
-  ],
-  "estado": [
-    {
-      "id": "b42c"
-    }
-  ],
-  "telefonoPersona": [
-    {
-      "id": "4f7c"
-    }
-  ],
-  "asignacion": [
-    {
-      "id": "63c4"
-    }
-  ],
-  "tipoActivo": [
-    {
-      "id": "92d7"
-    }
-  ],
-  "personas": [
-    {
-      "id": "0c60"
-    }
-  ],
-  "detalleMovimiento": [
-    {
-      "id": "860e"
-    }
-  ]
+  "categoriaActivos": [],
+  "Marcas": [],
+  "tipoPersona": [],
+  "tipoMovActivo": [],
+  "historialActivo": [],
+  "proveedor": [],
+  "estado": [],
+  "telefonoPersona": [],
+  "asignacion": [],
+  "tipoActivo": [],
+  "personas": [],
+  "detalleMovimiento": []
 }

@@ -207,20 +207,36 @@ p{
     background-color: white;
 }
 
-#searchButton  {
-    padding: 10px;
+#searchButton{
+    padding: 5px;
     border: none;
     outline: none;
     background-color: #007bff;
     color: white;
     border-radius: 50%;
     margin-left: 8px;
+	width: 40px;
+	height: 40px;
     cursor: pointer;
     transition: all 0.8s ease;
 }
 
-#searchButton:hover {
-    transform: scale(1.04);
+#searchEdit{
+	padding: 6px;
+    border: none;
+    outline: none;
+	width: 30px;
+	height: 30px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.8s ease;
+}
+
+#searchButton:hover,
+#searchEdit:hover {
+    transform: scale(1.2);
     background-color: #0b4481;
 }
 
@@ -408,7 +424,7 @@ nav {
 	position: sticky;
 	top: 0;
 	left: 0;
-	z-index: 100;
+	z-index: 999;
 }
 nav .toggle-sidebar {
 	font-size: 18px;
@@ -482,13 +498,13 @@ nav .profile img {
 }
 nav .profile .profile-link {
 	position: absolute;
-	top: calc(100% + 10px);
+	top: calc(100% - 10px);
 	right: 0;
 	background: var(--light);
 	padding: 10px 0;
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 	border-radius: 10px;
-	width: 160px;
+	width: 150px;
 	opacity: 0;
 	pointer-events: none;
 	transition: all .3s ease;
@@ -497,6 +513,7 @@ nav .profile .profile-link.show {
 	opacity: 1;
 	pointer-events: visible;
 	top: 100%;
+	z-index: 9999;
 }
 nav .profile .profile-link a {
 	padding: 10px 16px;
@@ -509,6 +526,7 @@ nav .profile .profile-link a {
 }
 nav .profile .profile-link a:hover {
 	background: var(--grey);
+	z-index: 999;
 }
 /* NAVBAR */
 /* CONTENT */
