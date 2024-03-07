@@ -5,16 +5,13 @@ allDropdown.forEach(item=> {
 	const a = item.parentElement.querySelector('a:first-child');
 	a.addEventListener('click', function (e) {
 		e.preventDefault();
-
 		if(!this.classList.contains('active')) {
 			allDropdown.forEach(i=> {
 				const aLink = i.parentElement.querySelector('a:first-child');
-
 				aLink.classList.remove('active');
 				i.classList.remove('show');
 			})
 		}
-
 		this.classList.toggle('active');
 		item.classList.toggle('show');
 	})
@@ -43,7 +40,6 @@ toggleSidebar.addEventListener('click', function () {
 		allSideDivider.forEach(item=> {
 			item.textContent = '-'
 		})
-
 		allDropdown.forEach(item=> {
 			const a = item.parentElement.querySelector('a:first-child');
 			a.classList.remove('active');
@@ -106,11 +102,9 @@ window.addEventListener('click', function (e) {
 			}
 		}
 	}
-
 	allMenu.forEach(item=> {
 		const icon = item.querySelector('.icon');
 		const menuLink = item.querySelector('.menu-link');
-
 		if(e.target !== icon) {
 			if(e.target !== menuLink) {
 				if (menuLink.classList.contains('show')) {
@@ -125,17 +119,12 @@ const allProgress = document.querySelectorAll('main .card .progress');
 allProgress.forEach(item=> {
 	item.style.setProperty('--value', item.dataset.value)
 })
-
-
 const listaItems = document.querySelectorAll('.side-dropdown li');
-
 listaItems.forEach(item => {
     const a = item.querySelector('a');
     const id = a.getAttribute('id');
-
     a.addEventListener('click', function (event) {
         event.preventDefault();
-
         if (id === "add") {
             const dialogoHTML = `
                 <dialog id="dialogo" class="dialogo">
@@ -155,14 +144,12 @@ listaItems.forEach(item => {
 						<option value="HP">  HP </option>
 				  	</select>
 					
-
 					<p>idCategoria</p>
 					<select class="form-control" id="idCategory">
 					  <option > Equipo de Computo </option>
 					  <option > Electrodomestico </option>
 					  <option > Juego </option>
 					</select>
-
 
 					<p>idTipo</p>
 					<select class="form-control" id="idTipe">
@@ -175,7 +162,6 @@ listaItems.forEach(item => {
 					  <option value="Impresora"> Impresora </option>
 					</select>
 
-					
 					<p>Valor Unitario</p><input id="idValor" type="text">
 					<p>idProveedor</p><input id="idProveedor"type="text">
 					<p>Nro Serial</p><input id="idSerial"type="text">
@@ -189,7 +175,6 @@ listaItems.forEach(item => {
 					  <option >En Reparación y/o garantia</option>
 					</select>
 
-
 					</section>
                     
 					<button id="guardar" class="btnCerrar">Guardar</button>
@@ -200,10 +185,8 @@ listaItems.forEach(item => {
             dialogo.showModal();
 			const guardar = document.getElementById("guardar");
 			guardar.addEventListener('click', function () {
-				
-				 
 				const datosAGuardar = {
-				
+						id:document.getElementById("idSerial").value,
 						CodTransaccion: document.getElementById("idTransation").value,
 						NFormulario: document.getElementById("Nform").value,
 						idMarca: document.getElementById("idMarca").value,
@@ -214,13 +197,8 @@ listaItems.forEach(item => {
 						serial: document.getElementById("idSerial").value,
 						idEmpresaResponsable: document.getElementById("idEnterprise").value,
 						idEstado: document.getElementById("idEstate").value
-					
-					
-
-					// Agrega más campos según sea necesario
 				};
-			
-				// Realizar una solicitud HTTP POST al servidor JSON usando fetch
+
 				fetch('http://localhost:3000/Inventario%20Campuslands', {
 					method: 'POST',
 					headers: {
@@ -246,11 +224,6 @@ listaItems.forEach(item => {
 				});
 
 
-
-
-
-
-
 			});
             const btnCerrar = dialogo.querySelector("#btnCerrar");
             btnCerrar.addEventListener('click', function () {
@@ -265,29 +238,27 @@ listaItems.forEach(item => {
 
         }
         else if(id === "edit") {
-			const dialogoHTML = `
-			<dialog id="dialogo" class="dialogo">
-			
-				<section class="titleAdd">
-					<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-				</section>
-				<form id="searchForm">
-					<input type="text" id="searchInput" placeholder="Que producto Busca....">
-					<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-				</form>
-				<section class="infoE">
-					<p>Agregar</p><input type="text">
-					<p>Editar</p><input type="text">
-					<p>Eliminar</p><input type="text">
-					<p>Buscar</p><input type="text">
-				</section>
-				<button id="guardar" class="btnCerrar">Guardar</button>
-			</dialog>
-		`;
+		const dialogoHTML = `
+		<dialog id="dialogo" class="dialogo">
+			<section class="titleAdd">
+				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
+			</section>
+			<div id="searchForm">
+				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
+				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</div>
+			<section class="infoE">
+				<p>Agregar</p><input type="text">
+				<p>Editar</p><input type="text">
+				<p>Eliminar</p><input type="text">
+				<p>Buscar</p><input type="text">
+			</section>
+			<button id="guardar" class="btnCerrar">Guardar</button>
+		</dialog>
+	`;
 		document.body.insertAdjacentHTML('beforeend', dialogoHTML);
 		const dialogo = document.getElementById("dialogo");
 		dialogo.showModal();
-
 		const btnCerrar = dialogo.querySelector("#btnCerrar");
 		btnCerrar.addEventListener('click', function () {
 			dialogo.close();
@@ -298,6 +269,11 @@ listaItems.forEach(item => {
 			dialogo.close();
 			dialogo.remove(); 
 		});
+		const btnSearchEdit = dialogo.querySelector("#searchEdit");
+		btnSearchEdit.addEventListener('click', function () {
+			alert("Hola");
+		});
+
 		}
 		else if(id === "delete") {
 			const dialogoHTML =  `

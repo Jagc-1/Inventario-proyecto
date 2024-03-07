@@ -1,35 +1,30 @@
 {
   "Inventario Campuslands": [
     {
-      "id": "7046"
-    },
-    {
-      "id": "cf27",
-      "campo1": "valor1",
-      "campo2": "valor2"
-    },
-    {
-      "id": "a10b",
-      "campo1": "fda",
-      "campo2": "valor2"
-    },
-    {
-      "id": "3bb7",
-      "campo1": "fsadfaf",
-      "campo2": "valor2"
-    },
-    {
-      "id": "ebe9",
-      "CodTransaccion": "5435",
-      "NFormulario": "345",
-      "idMarca": "",
-      "idCategoria": "Electrodomestico",
-      "idTipo": "CPU",
-      "ValorUnitario": "dsf",
-      "idProveedor": "dsf",
-      "serial": "sdf",
-      "idEmpresaResponsable": "sfd",
+      "id": "kjbiut2hig",
+      "CodTransaccion": "fdsa",
+      "NFormulario": "sdf",
+      "idMarca": "LG",
+      "idCategoria": "Equipo de Computo",
+      "idTipo": "Monitor",
+      "ValorUnitario": "asdf",
+      "idProveedor": "sdaf",
+      "serial": "fasfd",
+      "idEmpresaResponsable": "sdfa",
       "idEstado": "Asignado"
+    },
+    {
+      "id": "sdf45645646",
+      "CodTransaccion": "fadsf",
+      "NFormulario": "fsdf",
+      "idMarca": "LG",
+      "idCategoria": "Equipo de Computo",
+      "idTipo": "Monitor",
+      "ValorUnitario": "sdfa",
+      "idProveedor": "asdf",
+      "serial": "sdf45645646",
+      "idEmpresaResponsable": "sdf",
+      "idEstado": "No Asignado"
     }
   ],
   "categoriaActivos": [
