@@ -196,17 +196,15 @@ listaItems.forEach(item => {
 			const guardar = document.getElementById("guardar");
 			guardar.addEventListener('click', function () {
 				const datosAGuardar = {
-					id: document.getElementById("idSerial").value,
-					CodTransaccion: document.getElementById("idTransation").value,
-					NFormulario: document.getElementById("Nform").value,
-					idMarca: document.getElementById("idMarca").value,
-					idCategoria: document.getElementById("idCategory").value,
-					idTipo: document.getElementById("idTipe").value,
-					ValorUnitario: document.getElementById("idValor").value,
+					id: document.getElementById("idMarca").value,
+					Nit: document.getElementById("idMarca").value,
+					NombreMarca: document.getElementById("Nform").value,
+					Categoria: document.getElementById("idCategory").value,
+					tipo: document.getElementById("idType").value,
+					price: document.getElementById("idValor").value,
+					proveedor: document.getElementById("idValor").value,
 					idProveedor: document.getElementById("idProveedor").value,
-					serial: document.getElementById("idSerial").value,
-					idEmpresaResponsable: document.getElementById("idEnterprise").value,
-					idEstado: document.getElementById("idEstate").value
+					nombreProveedor: document.getElementById("idEnterprise").value
 				};
 
 				fetch('http://localhost:3000/Marcas', {
@@ -254,17 +252,14 @@ listaItems.forEach(item => {
 			const guardar = document.getElementById("guardar");
 			guardar.addEventListener('click', function () {
 				const datosAGuardar = {
-					id: document.getElementById("idSerial").value,
-					CodTransaccion: document.getElementById("idTransation").value,
-					NFormulario: document.getElementById("Nform").value,
-					idMarca: document.getElementById("idMarca").value,
-					idCategoria: document.getElementById("idCategory").value,
-					idTipo: document.getElementById("idTipe").value,
-					ValorUnitario: document.getElementById("idValor").value,
-					idProveedor: document.getElementById("idProveedor").value,
-					serial: document.getElementById("idSerial").value,
-					idEmpresaResponsable: document.getElementById("idEnterprise").value,
-					idEstado: document.getElementById("idEstate").value
+					id:document.getElementById("idCc").value,
+					CC: document.getElementById("idCc").value,
+					Nombre: document.getElementById("nombreP").value,
+					Tipo: document.getElementById("idTipoP").value,
+					Estado: document.getElementById("idTipe").value,
+					Numero: document.getElementById("idNumero").value,
+					Ubicaion: document.getElementById("idUbicate").value,
+					
 				};
 
 				fetch('http://localhost:3000/personas', {

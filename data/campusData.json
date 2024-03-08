@@ -12,10 +12,35 @@
       "serial": "",
       "idEmpresaResponsable": "",
       "idEstado": "No Asignado"
+    },
+    {
+      "id": "PUTITA",
+      "CodTransaccion": "johan ",
+      "NFormulario": "lo ",
+      "idMarca": "LG",
+      "idCategoria": "Equipo de Computo",
+      "idTipo": "Monitor",
+      "ValorUnitario": "mama ",
+      "idProveedor": "por ",
+      "serial": "PUTITA",
+      "idEmpresaResponsable": "JAJAJAJ",
+      "idEstado": "No Asignado"
     }
   ],
   "categoriaActivos": [],
-  "Marcas": [],
+  "Marcas": [
+    {
+      "id": "365d",
+      "Nit": "FADS",
+      "NombreMarca": "",
+      "Categoria": "Hardware",
+      "tipo": "Monitor",
+      "price": "",
+      "proveedor": "",
+      "idProveedor": "",
+      "nombreProveedor": ""
+    }
+  ],
   "tipoPersona": [],
   "tipoMovActivo": [],
   "historialActivo": [],
@@ -24,6 +49,25 @@
   "telefonoPersona": [],
   "asignacion": [],
   "tipoActivo": [],
-  "personas": [],
+  "personas": [
+    {
+      "id": "44c7",
+      "CC": "fdsaf",
+      "Nombre": "asdfas",
+      "Tipo": "Persona",
+      "Estado": "Activo",
+      "Numero": "",
+      "Ubicaion": "Casa"
+    },
+    {
+      "id": "a584",
+      "CC": "",
+      "Nombre": "",
+      "Tipo": "Persona",
+      "Estado": "Activo",
+      "Numero": "54645636",
+      "Ubicaion": "Casa"
+    }
+  ],
   "detalleMovimiento": []
 }

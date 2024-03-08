@@ -49,7 +49,7 @@ export const addMarcas = `
 <dialog id="dialogo" class="dialogo">
     <section class="titleAdd"> <h2>Agrega Nueva Marca<button id="btnCerrar">X</button></h2></section>
     <section class="info">
-    <p>Nit</p><input id="idTransation" type="text" autofocus>
+    <p>Nit</p><input id="idMarca" type="text" autofocus>
     <p>Nombre Marca</p><input id="Nform" type="text">
     <p>idCategoria</p>
     <select class="form-control" id="idCategory">
@@ -57,7 +57,7 @@ export const addMarcas = `
       <option value="Software"> Software </option>
     </select>
     <p>idTipo</p>
-    <select class="form-control" id="idTipe">
+    <select class="form-control" id="idType">
       <option value="Monitor"> Monitor </option>
       <option value="CPU"> CPU </option>
       <option value="Teclado"> Teclado </option>
@@ -68,7 +68,7 @@ export const addMarcas = `
     </select>
     <p>Valor Unitario</p><input id="idValor" type="text">
     <p>idProveedor</p><input id="idProveedor"type="text">
-    <p>Proveedor</p><input id="idEnterprise" type="text">
+    <p> Nombre del Proveedor</p><input id="idEnterprise" type="text">
     <button id="guardar" class="btnCerrar">Guardar</button>
 </dialog>
 `
@@ -77,10 +77,10 @@ export const addPeople = `
 <dialog id="dialogo" class="dialogo">
     <section class="titleAdd"> <h2>Agrega Persona <button id="btnCerrar">X</button></h2></section>
     <section class="info">
-    <p>CC</p><input id="idTransation" type="text" autofocus>
-    <p>Nombre</p><input id="Nform" type="text">
+    <p>CC</p><input id="idCc" type="text" autofocus>
+    <p>Nombre</p><input id="nombreP" type="text">
     <p>Tipo</p>
-    <select class="form-control" id="idMarca">
+    <select class="form-control" id="idTipoP">
         <option value="Persona"> Persona </option>
         <option value="Proveedor"> Proveedor </option>
         <option value="Area">  Area </option>
@@ -90,9 +90,9 @@ export const addPeople = `
       <option value="Activo"> Activo </option>
       <option value="Incativo"> Incativo </option>
     </select>
-    <p>Numero</p><input id="idValor" type="text">
+    <p>Numero</p><input id="idNumero" type="number">
     <p>Ubicaion</p>
-    <select class="form-control" id="idEstate">
+    <select class="form-control" id="idUbicate">
       <option value="Casa">Casa</option>
       <option valuePersonalPersonal</option>
       <option value="Profecionbal">Profecionbal</option>
