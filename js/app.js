@@ -42,7 +42,6 @@ if (sidebar.classList.contains('hide')) {
 }
 toggleSidebar.addEventListener('click', function () {
 	sidebar.classList.toggle('hide');
-
 	if (sidebar.classList.contains('hide')) {
 		allSideDivider.forEach(item => {
 			item.textContent = '-'
@@ -187,7 +186,7 @@ listaItems.forEach(item => {
 				dialogo.close();
 				dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
 			});
-		
+
 
 		}
 		else if (id === "add_marca") {
@@ -401,7 +400,7 @@ listaItems.forEach(item => {
 			const guardar = document.getElementById("guardar");
 			guardar.addEventListener('click', function () {
 				const datosAGuardar = {
-					id: document.getElementById("idSerial").value,
+					id: document.getElementById("Nform").value,
 					CodTransaccion: document.getElementById("idTransation").value,
 					nFormulario: document.getElementById("Nform").value,
 					idMarca: document.getElementById("idMarca").value,
@@ -506,7 +505,8 @@ listaItems.forEach(item => {
 	});
 });
 /**Fin ADD DATA */
-/* Inicio De Buscar ESTA EN FACE DEPEUBA...*/
+
+/*Inico De  Buscar */
 const allProgress2 = document.querySelectorAll('main .card .progress');
 allProgress2.forEach(item => {
 	item.style.setProperty('--value', item.dataset.value)
@@ -518,13 +518,72 @@ listaItems2.forEach(item => {
 	a.addEventListener('click', function (event) {
 		event.preventDefault();
 		if (ids === "search") {
-			var valorBuscado =prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
 			fetch('http://localhost:3000/Inventario%20Campuslands')
 				.then(response => response.json())
 				.then(data => {
 					const inventario = data;
 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
 					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const dialogoHTML = `
+						<dialog id="dialogo" class="dialogo">
+							<section class="titleAdd">
+								<h2> Buscar Producto <button id="btnCerrar">X</button></h2>
+							</section>
+							<div id="searchForm">   
+								<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
+								<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
+							</div>
+							<section class="infoE">
+								<p>CodTransaccion: <span>${objetoEncontrado.CodTransaccion}</span></p>
+								<p>NroFormulario:  <span>${objetoEncontrado.NFormulario}</span></p>
+								<p>idMarca: <span>${objetoEncontrado.idMarca} </span></p>
+								<p>idCategoria: <span> ${objetoEncontrado.idCategoria} </span> </p>
+								<p>idTipo: <span> <span> ${objetoEncontrado.idTipo}</span></p>
+								<p>Valor Unitario: <span>${objetoEncontrado.ValorUnitario}</span> </p>
+								<p>idProveedor: <span> ${objetoEncontrado.idProveedor}</span></p>
+								<p>Nro Serial: <span> ${objetoEncontrado.serial}</span> </p>
+								<p>EmpresaResponsable: <span> ${objetoEncontrado.idEmpresaResponsable}</span> </p>
+								<p>idEstado: <span>${objetoEncontrado["idEstado"]}</span> </p>
+							</section>
+							<button id="guardar" class="btnCerrar" >Aceptar</button>
+						</dialog>
+					`;
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
+						console.log("Objeto encontrado:", objetoEncontrado);
+					} else {
+						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
+						/*AGREGAR UNA VENTAN DE ERROR*/
+					}
+				})
+				.catch(error => console.error('Error al obtener los datos:', error));
+		}
+		else if (ids === "search_marca") {
+			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			fetch('http://localhost:3000/Marcas')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
 						const dialogoHTML = `
 						<dialog id="dialogo" class="dialogo">
 							<section class="titleAdd">
@@ -535,113 +594,107 @@ listaItems2.forEach(item => {
 								<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
 							</div>
 							<section class="infoE">
-							<p>CodTransaccion ${objetoEncontrado.CodTransaccion}</p> 
-							<p>NroFormulario  ${objetoEncontrado.CodTransaccion}</p>
-							<p>idMarca ${objetoEncontrado.CodTransaccion}</p>
-							<p>idCategoria ${objetoEncontrado.CodTransaccion}</p>
-							<p>idTipo ${objetoEncontrado.CodTransaccion}</p>
-							<p>Valor Unitario ${objetoEncontrado.CodTransaccion}</p>
-							<p>idProveedor ${objetoEncontrado.CodTransaccion}</p>
-							<p>Nro Serial ${objetoEncontrado.CodTransaccion}</p>
-							<p>idEmpresaResponsable ${objetoEncontrado.CodTransaccion} </p>
-							<p>idEstado	 ${objetoEncontrado.CodTransaccion}</p>
+							<p>Nit: <span>${objetoEncontrado.Nit}</span></p>
+							<p>Nombre Marca: <span> ${objetoEncontrado.NombreMarca} </span> </p>
+							<p>idCategoria: <span> ${objetoEncontrado.Categoria} </span> </p>
+							<p>idTipo: <span> ${objetoEncontrado.tipo} </span> </p>
+							<p>Valor Unitario: <span> ${objetoEncontrado.price} </span> </p>
+							<p>proveedor: <span> ${objetoEncontrado.proveedor} </span> </p>
+							<p>idProveedor: <span> ${objetoEncontrado.proveedor} </span> </p>
+							<p> Nombre del Proveedor: <span> ${objetoEncontrado.nombreProveedor} </span> </p>
 							</section>
-							<button id="guardar" class="btnCerrar" >Guardar</button>
+							<button id="guardar" class="btnCerrar" >Aceptar</button>
 						</dialog>
 					`;
-					document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-					const dialogo = document.getElementById("dialogo");
-					dialogo.showModal();
-					const btnCerrar = dialogo.querySelector("#btnCerrar");
-					btnCerrar.addEventListener('click', function () {
-						dialogo.close();
-						dialogo.remove();
-					});
-					const btnCerrara = dialogo.querySelector(".btnCerrar");
-					btnCerrara.addEventListener('click', function () {
-						dialogo.close();
-						dialogo.remove();
-					});
-					const btnSearchEdit = dialogo.querySelector("#searchEdit");
-					btnSearchEdit.addEventListener('click', function () {
-						alert("Hola");
-					});
+
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
 						console.log("Objeto encontrado:", objetoEncontrado);
 					} else {
 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
 						/*AGREGAR UNA VENTAN DE ERROR*/
 					}
 				})
-				.catch(error => console.error('Error al obtener los datos:', error));
-		}/* Se esta provando con activos*/
-		else if (ids === "search_marca") {
-			const dialogoHTML = `
-		<dialog id="dialogo" class="dialogo">
-			<section class="titleAdd">
-				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-			</section>
-			<div id="searchForm">   
-				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-			</div>
-			<section class="infoE">
-			<p>Nit</p>
-			<p>Nombre Marca</p>
-			<p>idCategoria</p>
-			<p>idTipo</p>
-			<p>Valor Unitario</p>
-			<p>idProveedor</p>
-			<p> Nombre del Proveedor</p>
-			</section>
-			<button id="guardar" class="btnCerrar" >Guardar</button>
-		</dialog>
-	`;
-			document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-			const dialogo = document.getElementById("dialogo");
-			dialogo.showModal();
-			const guardar = document.getElementById("guardar");
-			guardar.addEventListener('click', function () {
-				alert("Guardar");
-			});
-			const btnCerrar = dialogo.querySelector("#btnCerrar");
-			btnCerrar.addEventListener('click', function () {
-				dialogo.close();
-				dialogo.remove(); 
-			});
 		}
 		else if (ids === "search_persona") {
-			const dialogoHTML = `
+			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			fetch('http://localhost:3000/personas')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const dialogoHTML = `
 		<dialog id="dialogo" class="dialogo">
 			<section class="titleAdd">
 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
 			</section>
-			
 			<div id="searchForm">   
 				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
 				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</div>
 			<section class="infoE">
-			<p>CC</p>
-			<p>Nombre</p>
-			<p>Tipo</p>
-			<p>Estado</p>
-			<p>Numero</p>
-			<p>Ubicacion</p>
+				<p>CC:   <span> ${objetoEncontrado.CC} </span> </p>
+				<p>Nombre: <span>${objetoEncontrado.Nombre}</span> </p>
+				<p>Tipo: <span> ${objetoEncontrado.Tipo} </span></p>$
+				<p>Estado: <span> ${objetoEncontrado.Estado}</span></p>
+				<p>Numero: <span>${objetoEncontrado.Numero}</span></p>
+				<p>Ubicacion: <span>${objetoEncontrado.Ubicaion} </span></p>
 			</section>
-			<button id="guardar" class="btnCerrar" >Guardar</button>
+			<button id="guardar" class="btnCerrar" >Aceptar</button>
 		</dialog>
 	`;
-			document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-			const dialogo = document.getElementById("dialogo");
-			dialogo.showModal();
-			const btnCerrar = dialogo.querySelector("#btnCerrar");
-			btnCerrar.addEventListener('click', function () {
-				dialogo.close();
-				dialogo.remove(); 
-			});
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
+						console.log("Objeto encontrado:", objetoEncontrado);
+					} else {
+						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
+						/*AGREGAR UNA VENTAN DE ERROR*/
+					}
+				})
 		}
 		else if (ids === "search_estado") {
-			const dialogoHTML = `
+			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			fetch('http://localhost:3000/estado')
+				.then(response => response.json())
+				.then(data => {
+
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const dialogoHTML = `
 			<dialog id="dialogo" class="dialogo">
 			<section class="titleAdd">
 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
@@ -651,27 +704,47 @@ listaItems2.forEach(item => {
 				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</div>
 			<section class="infoE">
-			<p>id Estado </p> 
-			<p>Nuevo  Estado</p>
+			<p>id Estado${objetoEncontrado} </p> 
+			<p>Estado  ${objetoEncontrado}</p>
 			</section>
-			<button id="guardar" class="btnCerrar" >Guardar</button>
+			<button id="guardar" class="btnCerrar" >Aceptar</button>
 		</dialog>
 	`;
-			document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-			const dialogo = document.getElementById("dialogo");
-			dialogo.showModal();
-			const guardar = document.getElementById("guardar");
-			guardar.addEventListener('click', function () {
-				alert("Guardar");
-			});
-			const btnCerrar = dialogo.querySelector("#btnCerrar");
-			btnCerrar.addEventListener('click', function () {
-				dialogo.close();
-				dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
-			});
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
+						console.log("Objeto encontrado:", objetoEncontrado);
+					} else {
+						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
+						/*AGREGAR UNA VENTAN DE ERROR*/
+					}
+				})
 		}
 		else if (ids === "search_tipoPersona") {
-			const dialogoHTML = `
+			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			fetch('http://localhost:3000/tipoPersona')
+				.then(response => response.json())
+				.then(data => {
+
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const dialogoHTML = `
 		<dialog id="dialogo" class="dialogo">
 			<section class="titleAdd">
 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
@@ -681,27 +754,50 @@ listaItems2.forEach(item => {
 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</form> 
 			<section class="infoBorar">
-				<div>info</div>
+				<div>
+				<p>Tipo de persona</p>${objetoEncontrado.tipoPersona}
+				<p>Cargo</p>${objetoEncontrado.Cargo}
+				<p>CC</p>${objetoEncontrado.CC}
+				</div>
 				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
 			</section>
-			<button id="guardar" class="btnCerrar">Guardar</button>
+			<button id="guardar" class="btnCerrar">Aceptar</button>
 		</dialog>
 	`;
-			document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-			const dialogo = document.getElementById("dialogo");
-			dialogo.showModal();
-			const guardar = document.getElementById("guardar");
-			guardar.addEventListener('click', function () {
-				alert("Guardar");
-			});
-			const btnCerrar = dialogo.querySelector("#btnCerrar");
-			btnCerrar.addEventListener('click', function () {
-				dialogo.close();
-				dialogo.remove(); 
-			});
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
+						console.log("Objeto encontrado:", objetoEncontrado);
+					} else {
+						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
+						/*AGREGAR UNA VENTAN DE ERROR*/
+					}
+				})
 		}
 		else if (ids === "search_tipoMovAct") {
-			const dialogoHTML = `
+			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			fetch('http://localhost:3000/tipoMovActivo')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const dialogoHTML = `
 		<dialog id="dialogo" class="dialogo">
 			<section class="titleAdd">
 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
@@ -711,27 +807,56 @@ listaItems2.forEach(item => {
 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</form> 
 			<section class="infoBorar">
-				<div>info</div>
+				<div>
+				<p>CodTransaccion</p>${objetoEncontrado.CodTransaccion},
+				<p>nFormulario</p>${objetoEncontrado.nFormulario},
+				<p>idMarca</p>${objetoEncontrado.idMarca},
+				<p>idCategoria</p>${objetoEncontrado.idCategoria},
+				<p>serial</p>${objetoEncontrado.serial},
+				<piniciop>${objetoEncontrado.inicio},
+				<p>fin</p>${objetoEncontrado.fin},
+				<p>nitProveedor</p>${objetoEncontrado.nitProveedor},
+				<p>motivo</p>${objetoEncontrado.motivo}
+				</div>
 				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
 			</section>
-			<button id="guardar" class="btnCerrar">Guardar</button>
+			<button id="guardar" class="btnCerrar">Aceptar</button>
 		</dialog>
 	`;
-			document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-			const dialogo = document.getElementById("dialogo");
-			dialogo.showModal();
-			const guardar = document.getElementById("guardar");
-			guardar.addEventListener('click', function () {
-				alert("Guardar");
-			});
-			const btnCerrar = dialogo.querySelector("#btnCerrar");
-			btnCerrar.addEventListener('click', function () {
-				dialogo.close();
-				dialogo.remove(); 
-			});
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
+						console.log("Objeto encontrado:", objetoEncontrado);
+					} else {
+						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
+						/*AGREGAR UNA VENTAN DE ERROR*/
+					}
+				})
 		}
 		else if (ids === "search_tipoActivo") {
-			const dialogoHTML = `
+			var valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
+			fetch('http://localhost:3000/tipoActivo')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const dialogoHTML = `
 		<dialog id="dialogo" class="dialogo">
 			<section class="titleAdd">
 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
@@ -741,65 +866,102 @@ listaItems2.forEach(item => {
 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</form> 
 			<section class="infoBorar">
-				<div>info</div>
+				<div>
+				<p>CodTransaccion</p> ${objetoEncontrado.CodTransaccion},
+				<p>NFormulario</p> ${objetoEncontrado.NFormulario},
+				<p>idMarca</p> ${objetoEncontrado.idMarca},
+				<p>idCategoria</p> ${objetoEncontrado.idCategoria},
+				<p>idTipo</p> ${objetoEncontrado.idTipo},
+				<p>ValorUnitario</p> ${objetoEncontrado.ValorUnitario},
+				<p>idProveedor</p> ${objetoEncontrado.idProveedor},
+				<p>serial</p> ${objetoEncontrado.serial},
+				<p>idEmpresaResponsable</p> ${objetoEncontrado.idEmpresaResponsable},
+				<p>idEstado</p> ${objetoEncontrado.idEstado},
+				</div>
 				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
 			</section>
-			<button id="guardar" class="btnCerrar">Guardar</button>
+			<button id="guardar" class="btnCerrar">Aceptar</button>
 		</dialog>
 	`;
-			document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-			const dialogo = document.getElementById("dialogo");
-			dialogo.showModal();
-			const guardar = document.getElementById("guardar");
-			guardar.addEventListener('click', function () {
-				alert("Guardar");
-			});
-			const btnCerrar = dialogo.querySelector("#btnCerrar");
-			btnCerrar.addEventListener('click', function () {
-				dialogo.close();
-				dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
-			});
+						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
+						const dialogo = document.getElementById("dialogo");
+						dialogo.showModal();
+						const btnCerrar = dialogo.querySelector("#btnCerrar");
+						btnCerrar.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnCerrara = dialogo.querySelector(".btnCerrar");
+						btnCerrara.addEventListener('click', function () {
+							dialogo.close();
+							dialogo.remove();
+						});
+						const btnSearchEdit = dialogo.querySelector("#searchEdit");
+						btnSearchEdit.addEventListener('click', function () {
+							alert("Hola");
+						});
+						console.log("Objeto encontrado:", objetoEncontrado);
+					} else {
+						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
+						/*AGREGAR UNA VENTAN DE ERROR*/
+					}
+				})
 		}
-/*Aqui se agrean el resto de opciones de ser necesario */
-
 	});
-
-
-
-	// const searchInput = document.getElementById('searchInput');
-	// let products = []; // Array para almacenar los productos
-
-
-	// fetch('./../data/campusData.json')
-	// 	.then(response => response.json())
-	// 	.then(data => {
-	// 		products = data; // Almacenar los productos en el array products
-	// 	})
-	// 	.catch(error => {
-	// 		console.error('Error al cargar los productos:', error);
-	// 	});
-
-	// searchInput.addEventListener('input', function(event) {
-	// 	const searchTerm = event.target.value.toLowerCase().trim();
-
-	// 	const filteredProducts = products.filter(product => {
-	// 		return product.name.toLowerCase().includes(searchTerm);
-	// 	});
-	// });
-
-	// function displayFilteredProducts(filteredProducts) {
-	// 	const dialogo = document.getElementById('dialogo'); // Obtener la referencia al diálogo
-
-	// 	// Limpiar el contenido existente dentro del diálogo
-	// 	const infoE = dialogo.querySelector('.infoE');
-	// 	infoE.innerHTML = '';
-
-	// 	// Construir y agregar los elementos de producto al diálogo
-	// 	filteredProducts.forEach(product => {
-	// 		const productElement = document.createElement('div');
-	// 		productElement.textContent = `${product.name} - $${product.price}`;
-	// 		infoE.appendChild(productElement);
-	// 	});
-	// }
-
 });
+/*Fin De Buscar */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const searchInput = document.getElementById('searchInput');
+// let products = []; // Array para almacenar los productos
+
+
+// fetch('./../data/campusData.json')
+// 	.then(response => response.json())
+// 	.then(data => {
+// 		products = data; // Almacenar los productos en el array products
+// 	})
+// 	.catch(error => {
+// 		console.error('Error al cargar los productos:', error);
+// 	});
+
+// searchInput.addEventListener('input', function(event) {
+// 	const searchTerm = event.target.value.toLowerCase().trim();
+
+// 	const filteredProducts = products.filter(product => {
+// 		return product.name.toLowerCase().includes(searchTerm);
+// 	});
+// });
+
+// function displayFilteredProducts(filteredProducts) {
+// 	const dialogo = document.getElementById('dialogo'); // Obtener la referencia al diálogo
+
+// 	// Limpiar el contenido existente dentro del diálogo
+// 	const infoE = dialogo.querySelector('.infoE');
+// 	infoE.innerHTML = '';
+
+// 	// Construir y agregar los elementos de producto al diálogo
+// 	filteredProducts.forEach(product => {
+// 		const productElement = document.createElement('div');
+// 		productElement.textContent = `${product.name} - $${product.price}`;
+// 		infoE.appendChild(productElement);
+// 	});
+// }
+

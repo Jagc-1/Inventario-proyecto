@@ -1,42 +1,104 @@
 {
   "Inventario Campuslands": [
     {
-      "id": "",
-      "CodTransaccion": "HOLA",
-      "NFormulario": "",
-      "idMarca": "",
-      "idCategoria": "",
-      "idTipo": "",
-      "ValorUnitario": "",
-      "idProveedor": "",
-      "serial": "",
-      "idEmpresaResponsable": "",
-      "idEstado": ""
+      "id": "123a",
+      "CodTransaccion": "asdfadf",
+      "NFormulario": "dfa",
+      "idMarca": "COMPUMAX",
+      "idCategoria": "Equipo de Computo",
+      "idTipo": "Monitor",
+      "ValorUnitario": "4554",
+      "idProveedor": "65",
+      "serial": "123a",
+      "idEmpresaResponsable": "sfd",
+      "idEstado": "Asignado"
     },
     {
-      "id": "HOLA",
-      "CodTransaccion": "",
-      "NFormulario": "",
-      "idMarca": "",
-      "idCategoria": "",
-      "idTipo": "",
-      "ValorUnitario": "",
-      "idProveedor": "",
-      "serial": "HOLA",
-      "idEmpresaResponsable": "",
-      "idEstado": ""
+      "id": "123",
+      "CodTransaccion": "hola ",
+      "NFormulario": "13268541",
+      "idMarca": "COMPUMAX",
+      "idCategoria": "Equipo de Computo",
+      "idTipo": "Teclado",
+      "ValorUnitario": "asdf",
+      "idProveedor": "4134",
+      "serial": "123",
+      "idEmpresaResponsable": "234",
+      "idEstado": "Dado de Baja por Daño"
     }
   ],
   "categoriaActivos": [],
-  "Marcas": [],
-  "tipoPersona": [],
-  "tipoMovActivo": [],
+  "Marcas": [
+    {
+      "id": "123",
+      "Nit": "123",
+      "NombreMarca": "fsd",
+      "Categoria": "Hardware",
+      "tipo": "Monitor",
+      "price": "dgfsg",
+      "proveedor": "dgfsg",
+      "idProveedor": "dsf",
+      "nombreProveedor": "sfd"
+    }
+  ],
+  "tipoPersona": [
+    {
+      "id": "123",
+      "tipoPersona": "fasf",
+      "Cargo": "fsdaf",
+      "CC": "123"
+    },
+    {
+      "id": "6",
+      "tipoPersona": "fsa",
+      "Cargo": "456",
+      "CC": "6"
+    }
+  ],
+  "tipoMovActivo": [
+    {
+      "id": "1206",
+      "CodTransaccion": "1205",
+      "nFormulario": "fsdf",
+      "idMarca": "dfds",
+      "idCategoria": "Equipo de Computo",
+      "serial": "1206",
+      "inicio": "fsd",
+      "fin": "fsdaf",
+      "nitProveedor": "4134",
+      "motivo": "Asignado"
+    }
+  ],
   "historialActivo": [],
   "proveedor": [],
   "estado": [],
   "telefonoPersona": [],
   "asignacion": [],
-  "tipoActivo": [],
-  "personas": [],
+  "tipoActivo": [
+    {
+      "id": "321",
+      "CodTransaccion": "123",
+      "NFormulario": "gh",
+      "idMarca": "LG",
+      "idCategoria": "Electrodomestico",
+      "idTipo": "CPU",
+      "ValorUnitario": "gs",
+      "idProveedor": "sdfg",
+      "serial": "321",
+      "idEmpresaResponsable": "sfd",
+      "idEstado": "No Asignado"
+    }
+  ],
+  "personas": [
+    {
+      "id": "100",
+      "CC": "100",
+      "Nombre": "jsoe ",
+      "Tipo": "Persona",
+      "Estado": "Incativo",
+      "Numero": "54654",
+      "Ubicaion": "Personal"
+    }
+  ],
   "detalleMovimiento": []
 }

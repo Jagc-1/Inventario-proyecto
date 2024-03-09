@@ -56,11 +56,13 @@ export const addMarcas = `
     <p>Nombre Marca</p><input id="Nform" type="text" required>
     <p>idCategoria</p>
     <select class="form-control" id="idCategory" required>
+      <option value=""></option>
       <option value="Hardware">Hardware </option>
       <option value="Software"> Software </option>
     </select>
     <p>idTipo</p>
     <select class="form-control" id="idType" required>
+      <option value=""></option>
       <option value="Monitor"> Monitor </option>
       <option value="CPU"> CPU </option>
       <option value="Teclado"> Teclado </option>
@@ -83,18 +85,21 @@ export const addPeople = `
     <p>Nombre</p><input id="nombreP" type="text" required>
     <p>Tipo</p>
     <select class="form-control" id="idTipoP" required>
+        <option value=""></option>
         <option value="Persona"> Persona </option>
         <option value="Proveedor"> Proveedor </option>
         <option value="Area">  Area </option>
      </select>
     <p>Estado</p>
     <select class="form-control" id="idTipe" required>
+      <option value=""></option>
       <option value="Activo"> Activo </option>
       <option value="Incativo"> Incativo </option>
     </select>
     <p>Numero</p><input id="idNumero" type="number" required>
     <p>Ubicacion</p>
     <select class="form-control" id="idUbicate" required>
+      <option value=""></option>
       <option value="Casa">Casa</option>
       <option value="Personal">Personal</option>
       <option value="Profecionbal">Profesional</option>
@@ -133,6 +138,7 @@ export const addTipoMovAct = `
     <p>idMarca</p><input id="idMarca" type="text" required>
     <p>idCategoria</p>
     <select class="form-control" id="idCategory" required>
+      <option value=""></option>
       <option > Equipo de Computo </option>
       <option > Electrodomestico </option>
       <option > Juego </option>
@@ -164,6 +170,7 @@ export const addTipoActivo = `
     <p>NroFormulario</p><input id="Nform" type="text" required>
     <p>idMarca</p>
     <select class="form-control" id="idMarca" required>
+        <option value=""></option>
         <option value="LG"> LG </option>
         <option value="COMPUMAX"> COMPUMAX </option>
         <option value="BENO">  BENO </option>
@@ -173,12 +180,14 @@ export const addTipoActivo = `
       </select>
     <p>idCategoria</p>
     <select class="form-control" id="idCategory" required>
+      <option value=""></option>
       <option > Equipo de Computo </option>
       <option > Electrodomestico </option>
       <option > Juego </option>
     </select>
     <p>idTipo</p>
     <select class="form-control" id="idTipe" required>
+      <option value=""></option>
       <option value="Monitor"> Monitor </option>
       <option value="CPU"> CPU </option>
       <option value="Teclado"> Teclado </option>
@@ -193,6 +202,7 @@ export const addTipoActivo = `
     <p>idEmpresaResponsable</p><input id="idEnterprise" type="text" required>
     <p>idEstado					</p>
     <select class="form-control" id="idEstate" required>
+      option value=""></option>
       <option >No Asignado</option>
       <option >Asignado</option>
       <option >Dado de Baja por Daño</option>
@@ -211,6 +221,7 @@ export const addAsignacion = `
     <p>NroFormulario</p><input id="Nform" type="text" required>
     <p>idMarca</p>
     <select class="form-control" id="idMarca" required>
+        <option value=""></option>
         <option value="LG"> LG </option>
         <option value="COMPUMAX"> COMPUMAX </option>
         <option value="BENO">  BENO </option>
@@ -220,12 +231,14 @@ export const addAsignacion = `
       </select>
     <p>idCategoria</p>
     <select class="form-control" id="idCategory" required>
+      <option value=""></option>
       <option > Equipo de Computo </option>
       <option > Electrodomestico </option>
       <option > Juego </option>
     </select>
     <p>idTipo</p>
     <select class="form-control" id="idTipe" required>
+      <option value=""></option>
       <option value="Monitor"> Monitor </option>
       <option value="CPU"> CPU </option>
       <option value="Teclado"> Teclado </option>
@@ -240,6 +253,7 @@ export const addAsignacion = `
     <p>idEmpresaResponsable</p><input id="idEnterprise" type="text" required>
     <p>idEstado					</p>
     <select class="form-control" id="idEstate" required>
+      <option value=""></option>
       <option >No Asignado</option>
       <option >Asignado</option>
       <option >Dado de Baja por Daño</option>
