@@ -168,15 +168,16 @@ p{
 }
 
 .infoE{
-    display: grid;
-    grid-template-columns: 15% 85%;
+    display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
     margin: 50PX;
     width: 894px;
-    height: 294px;
-	align-items: center;
-    border: #000 solid 2PX;
+    height: 500px;
+    border: #000 solid 2px;
     
-} 
+}
+
 
 .infoE input{
 	height: 40px;
@@ -197,7 +198,8 @@ p{
 }
 
 #searchInput:hover,
-.info input:hover {
+.info input:focus,
+.form-control:focus {
     outline: none;
     border: none;
 }
@@ -526,14 +528,53 @@ nav .profile .profile-link a {
 }
 nav .profile .profile-link a:hover {
 	background: var(--grey);
-	z-index: 999;
 }
+
+#searchForm input:required,
+select:required {
+	content:"*";
+ }
 /* NAVBAR */
 /* CONTENT */
 
 
 
+
+
 /* Responsive */
+@media screen and (max-width: 1024px) {
+	#content {
+		position: relative;
+		width: calc(100% - 60px);
+		transition: all .3s ease;
+	}
+	nav .nav-link,
+	nav .divider {
+		display: none;
+	}
+	nav {
+		width: 100%;
+		background: var(--dark);
+		height: 64px;
+		padding: 0 20px;
+		display: flex;
+		align-items: center;
+		grid-gap: 28px;
+		position: sticky;
+		top: 0;
+		left: 0;
+		z-index: 100;
+	}
+	.logo {
+		margin: 10px;
+		width: 35px;
+		height: auto;
+	}
+
+}
+
+
+
 @media screen and (max-width: 768px) {
 	#content {
 		position: relative;
@@ -546,7 +587,7 @@ nav .profile .profile-link a:hover {
 	}
 	nav {
 		width: 100%;
-		background: var(--light);
+		background: var(--dark);
 		height: 64px;
 		padding: 0 20px;
 		display: flex;
@@ -557,4 +598,29 @@ nav .profile .profile-link a:hover {
 		left: 0;
 		z-index: 100;
 	}
+	.logo {
+		margin-left: 10px;
+		margin-right: 20px;
+		width: 30px;
+		height: auto;
+	}
+
+	/*  search */
+	#searchInput {
+		padding: 10px;
+		border-radius: 50px;
+		font-size: 14px;
+		border: none;
+		outline: none;
+		transition: all 0.3s ease;
+		width: 90px;
+		
+	}
+
+	#searchInput:focus {
+		width: 150px;
+		background-color: white;
+	}
+
+
 }

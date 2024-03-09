@@ -2,45 +2,33 @@
   "Inventario Campuslands": [
     {
       "id": "",
-      "CodTransaccion": "",
+      "CodTransaccion": "HOLA",
       "NFormulario": "",
-      "idMarca": "LG",
-      "idCategoria": "Equipo de Computo",
-      "idTipo": "Monitor",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
       "ValorUnitario": "",
       "idProveedor": "",
       "serial": "",
       "idEmpresaResponsable": "",
-      "idEstado": "No Asignado"
+      "idEstado": ""
     },
     {
-      "id": "PUTITA",
-      "CodTransaccion": "johan ",
-      "NFormulario": "lo ",
-      "idMarca": "LG",
-      "idCategoria": "Equipo de Computo",
-      "idTipo": "Monitor",
-      "ValorUnitario": "mama ",
-      "idProveedor": "por ",
-      "serial": "PUTITA",
-      "idEmpresaResponsable": "JAJAJAJ",
-      "idEstado": "No Asignado"
+      "id": "HOLA",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "HOLA",
+      "idEmpresaResponsable": "",
+      "idEstado": ""
     }
   ],
   "categoriaActivos": [],
-  "Marcas": [
-    {
-      "id": "365d",
-      "Nit": "FADS",
-      "NombreMarca": "",
-      "Categoria": "Hardware",
-      "tipo": "Monitor",
-      "price": "",
-      "proveedor": "",
-      "idProveedor": "",
-      "nombreProveedor": ""
-    }
-  ],
+  "Marcas": [],
   "tipoPersona": [],
   "tipoMovActivo": [],
   "historialActivo": [],
@@ -49,25 +37,6 @@
   "telefonoPersona": [],
   "asignacion": [],
   "tipoActivo": [],
-  "personas": [
-    {
-      "id": "44c7",
-      "CC": "fdsaf",
-      "Nombre": "asdfas",
-      "Tipo": "Persona",
-      "Estado": "Activo",
-      "Numero": "",
-      "Ubicaion": "Casa"
-    },
-    {
-      "id": "a584",
-      "CC": "",
-      "Nombre": "",
-      "Tipo": "Persona",
-      "Estado": "Activo",
-      "Numero": "54645636",
-      "Ubicaion": "Casa"
-    }
-  ],
+  "personas": [],
   "detalleMovimiento": []
 }
