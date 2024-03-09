@@ -1,3 +1,4 @@
+/* Importaciones para el funcinamientto de las ventanas modal */
 import { addActive } from "./templatesG.js"
 import { addMarcas } from "./templatesG.js"
 import { addPeople } from "./templatesG.js"
@@ -5,6 +6,7 @@ import { addEstado } from "./templatesG.js"
 import { addTipoPersona } from "./templatesG.js"
 import { addTipoMovAct } from "./templatesG.js"
 import { addTipoActivo } from "./templatesG.js"
+
 // SIDEBAR DROPDOWN
 const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
 const sidebar = document.getElementById('sidebar');
@@ -23,6 +25,7 @@ allDropdown.forEach(item => {
 		item.classList.toggle('show');
 	})
 })
+
 // SIDEBAR COLLAPSE
 const toggleSidebar = document.querySelector('nav .toggle-sidebar');
 const allSideDivider = document.querySelectorAll('#sidebar .divider');
@@ -88,6 +91,7 @@ const dropdownProfile = profile.querySelector('.profile-link');
 imgProfile.addEventListener('click', function () {
 	dropdownProfile.classList.toggle('show');
 })
+
 // MENU
 const allMenu = document.querySelectorAll('main .content-data .head .menu');
 allMenu.forEach(item => {
@@ -118,6 +122,7 @@ window.addEventListener('click', function (e) {
 		}
 	})
 })
+
 // PROGRESSBAR
 /* Inicio ADD DATA*/
 const allProgress = document.querySelectorAll('main .card .progress');
@@ -505,6 +510,7 @@ listaItems.forEach(item => {
 	});
 });
 /**Fin ADD DATA */
+
 
 /*Inico De  Buscar */
 const allProgress2 = document.querySelectorAll('main .card .progress');

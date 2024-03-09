@@ -165,32 +165,24 @@ h2 {
 }
 
 .infoE {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-	
-    gap: 10px; 
-    text-align: start; 
-    margin: 50px ; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     max-width: 894px; 
     border: 2px solid #000; 
     padding: 20px; 
 }
 
 .infoE p {
-    font-weight: bold;
-    margin: 5px 0; 
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-	margin-right: 10px;
+	font-weight: bold;
+
 }
 
-
-.infoE span {
-    font-weight: 500;
-	margin-left: 15px;
-	align-self: flex-end;
+.infoE p span {
+	font-weight: 500;
+	display: block;
+	margin: auto;
+	text-align: center;
 }
 
 
