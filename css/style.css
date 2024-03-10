@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-
 /* Resetea Estilos */
 * {
 	font-family: 'Open Sans', sans-serif;
@@ -8,7 +7,6 @@
 	box-sizing: border-box;
     user-select: none;
 }
-
 /* Estilos Universales */
 :root {
 	--grey: #F1F0F6;
@@ -22,35 +20,27 @@
 	--dark-blue: #0C5FCD;
 	--red: #FC3B56;
 }
-
 html {
 	overflow-x: hidden;
 }
-
 body {
 	background: var(--grey);
 	overflow-x: hidden;
 }
-
 a {
 	text-decoration: none;
     text-align: center;
 }
-
 li {
 	list-style: none;
     text-align: center;
 }
-
 h2 {
 	font-size: 30px;
 	line-height: 54px;
 	color: white;
 	text-align: center;
 }
-
-
-
 /* ventana emergente*/
 #dialogo {
     top: 50%;
@@ -65,26 +55,21 @@ h2 {
 }
 .dialogo{
     display: grid;
-    grid-template-columns: 100% ; 
-        
+    grid-template-columns: 100% ;       
 }
 .logo{
     margin: 10px;
     width: 40px;
-    height: auto;
-    
+    height: auto; 
 }
-
 .info{
 	display: grid;
 	grid-template-columns: 25% 70%;
 	margin: 30px;
 }
-
 .info p{
 	margin-left: 10px;
 }
-
 .info input,
 .info select{
 	margin-top: 10px;
@@ -92,19 +77,15 @@ h2 {
 	border: none;
 	border-bottom: 1px solid #333;
 }
-
 .info input:focus,
 .info select:focus{
 	outline: none;
     border: none;
 	border-bottom: 1px solid #333;
 }
-
 .titleAdd{
     background: #0b4481;
 }
-
-
 /* botones de las ventanas*/
 #btnCerrar{
 	top: 5px;
@@ -127,7 +108,6 @@ h2 {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 #guardar{
     margin: 10px;
     width: 100px;
@@ -138,7 +118,6 @@ h2 {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 #guardar:hover,
 #btnBorrar:hover{
 	border-radius: 8px;
@@ -151,15 +130,12 @@ h2 {
     background-color: #ff0000;
 	transform: scale(0.9);
  }
-
  #btnBorrar:hover{
 	background-color: #ff0000;
 }
-
  #guardar:hover{
     background-color: #1e9e05;
  }
-
 .infoBorar{
 	display: flex;
     justify-content: space-around;
@@ -168,7 +144,6 @@ h2 {
     height: 294px;
     border: #000 solid 2px;
 }
-
 .infoE {
     display: grid;
 	grid-template-columns: 1fr 1fr;;
@@ -178,7 +153,6 @@ h2 {
     border: 2px solid #000; 
     padding: 20px; 
 }
-
 .infoE p {
 	margin: 0;
 	padding: 5px 0; 
@@ -187,15 +161,12 @@ h2 {
     align-items: center; 
 	font-weight: bold; 
 }
-
 .infoE p span {
 	font-weight: 500;
 	margin-left: auto;
 	margin-right: 70px;
 	text-align: center;
 }
-
-
 /*  search */
 #searchInput {
     padding: 10px;
@@ -207,19 +178,16 @@ h2 {
     width: 150px;
     
 }
-
 #searchInput:hover,
 .info input:focus,
 .form-control:focus {
     outline: none;
     border: none;
 }
-
 #searchInput:focus {
     width: 250px;
     background-color: white;
 }
-
 #searchButton{
     padding: 5px;
     border: none;
@@ -233,7 +201,6 @@ h2 {
     cursor: pointer;
     transition: all 0.8s ease;
 }
-
 #searchEdit{
 	padding: 6px;
     border: none;
@@ -246,14 +213,11 @@ h2 {
     cursor: pointer;
     transition: all 0.8s ease;
 }
-
 #searchButton:hover,
 #searchEdit:hover {
     transform: scale(1.2);
     background-color: #0b4481;
 }
-
-
 /* SIDEBAR */
 #sidebar {
 	position: fixed;
@@ -407,13 +371,10 @@ h2 {
 #sidebar .ads .wrapper p span {
 	font-weight: 700;
 }
-
 .fa-solid{
     color: white;
 }
 /* SIDEBAR */
-
-
 /* CONTENT */
 #content {
 	position: relative;
@@ -425,7 +386,6 @@ h2 {
 	width: calc(100% - 60px);
 	left: 60px;
 }
-
 /* NAVBAR */
 nav {
 	background: var(--dark);
@@ -540,17 +500,12 @@ nav .profile .profile-link a {
 nav .profile .profile-link a:hover {
 	background: var(--grey);
 }
-
 #searchForm input:required,
 select:required {
 	content:"*";
  }
 /* NAVBAR */
 /* CONTENT */
-
-
-
-
 
 /* Responsive para diferentes tipos de pantallas <3 */
 @media screen and (max-width: 768px) {
@@ -560,7 +515,6 @@ select:required {
 		width: 30px;
 		height: auto;
 	}
-
 	.info {
 		grid-template-columns: 100%; 
 	}
@@ -568,16 +522,12 @@ select:required {
 		
 		margin-top: 10px;
 	}
-
-
 	.infoE {
         margin: 20px; 
     }
-
     .infoE p span {
         margin-right: 35px; 
     }
-
 	/*  search */
 	#searchInput {
 		padding: 10px;
@@ -587,17 +537,12 @@ select:required {
 		outline: none;
 		transition: all 0.3s ease;
 		width: 90px;
-		
 	}
-
 	#searchInput:focus {
 		width: 150px;
 		background-color: white;
 	}
-
-
 }
-
 
 @media (max-width: 480px) {
     .infoE {
@@ -606,17 +551,13 @@ select:required {
         margin: 20px ; 
         padding: 10px; 
     }
-
     .infoE p {
     	padding: 5px 0; 
     }
-
     .infoE p span {
         margin-right: 5px;
     }
-
 	#content .divider{
 		display: none;
 	}
-
 }

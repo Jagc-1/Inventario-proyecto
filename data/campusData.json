@@ -132,6 +132,16 @@
   "telefonoPersona": [],
   "asignacion": [],
   "tipoActivo": [],
-  "personas": [],
+  "personas": [
+    {
+      "CC": "105",
+      "Nombre": "fdsaf",
+      "Tipo": "Persona",
+      "Estado": "Activo",
+      "Numero": "2342325",
+      "Ubicaion": "Casa",
+      "id": "105"
+    }
+  ],
   "detalleMovimiento": []
 }

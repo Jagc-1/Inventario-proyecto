@@ -105,7 +105,6 @@ document.body.innerHTML +=`
 			</div>
 		</nav>
 `
-
 const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
 const sidebar = document.getElementById('sidebar');
 allDropdown.forEach(item => {
@@ -286,8 +285,6 @@ listaItems.forEach(item => {
 				dialogo.close();
 				dialogo.remove(); // Eliminar el diálogo del DOM cuando se cierra
 			});
-
-
 		}
 		else if (id === "add_marca") {
 			const dialogoHTML = addMarcas;
@@ -307,7 +304,6 @@ listaItems.forEach(item => {
 					idProveedor: document.getElementById("idProveedor").value,
 					nombreProveedor: document.getElementById("idEnterprise").value
 				};
-
 				fetch('http://localhost:3000/Marcas', {
 					method: 'POST',
 					headers: {
@@ -331,7 +327,6 @@ listaItems.forEach(item => {
 						console.error('Error al guardar datos:', error);
 						alert('Error al guardar datos');
 					});
-
 			});
 			const btnCerrar = dialogo.querySelector("#btnCerrar");
 			btnCerrar.addEventListener('click', function () {
@@ -383,7 +378,6 @@ listaItems.forEach(item => {
 						console.error('Error al guardar datos:', error);
 						alert('Error al guardar datos');
 					});
-
 			});
 			const btnCerrar = dialogo.querySelector("#btnCerrar");
 			btnCerrar.addEventListener('click', function () {
@@ -430,7 +424,6 @@ listaItems.forEach(item => {
 						console.error('Error al guardar datos:', error);
 						alert('Error al guardar datos');
 					});
-
 			});
 			const btnCerrar = dialogo.querySelector("#btnCerrar");
 			btnCerrar.addEventListener('click', function () {
@@ -479,7 +472,6 @@ listaItems.forEach(item => {
 						console.error('Error al guardar datos:', error);
 						alert('Error al guardar datos');
 					});
-
 			});
 			const btnCerrar = dialogo.querySelector("#btnCerrar");
 			btnCerrar.addEventListener('click', function () {
@@ -534,7 +526,6 @@ listaItems.forEach(item => {
 						console.error('Error al guardar datos:', error);
 						alert('Error al guardar datos');
 					});
-
 			});
 			const btnCerrar = dialogo.querySelector("#btnCerrar");
 			btnCerrar.addEventListener('click', function () {
@@ -1006,7 +997,6 @@ listaItems3.forEach(item => {
 		event.preventDefault();
 		if (ids === "edit") {
 			let valorBuscado = prompt("Ingrese el ID del producto que desea editar");
-
 			fetch('http://localhost:3000/Inventario%20Campuslands')
 				.then(response => response.json())
 				.then(data => {
@@ -1352,7 +1342,176 @@ listaItems3.forEach(item => {
 					console.error('Error al obtener el inventario:', error);
 				});
 		}
+		else if (ids === "edit_persona") {
+			let valorBuscado = prompt("Ingrese el ID del producto que desea editar");
 
+			fetch('http://localhost:3000/personas')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const idEditar = valorBuscado; // ID del producto que deseas editar
+						// Obtener los datos del objeto encontrado
+						const { CC, Nombre, Tipo, Estado, Numero, Ubicaion } = objetoEncontrado;
+						// Construir el diálogo con los datos del objeto encontrado
+						const dialogoHTML =
+							`
+                            <dialog id="dialogo" class="dialogo">
+                                <section class="titleAdd">
+                                    <h2> Editar Producto <button id="btnCerrar">X</button></h2>
+                                </section>
+                                <section class="infoE">
+									<p>CC: <span><input type="text" id="Cc" value="${CC}"></span></p>
+                                    <p>Nombre: <span><input type="text" id="nombre" value="${Nombre}"></span></p>
+									<p>Tipo: <span><input type="text" id="tipo" value="${Tipo}"></span></p>
+									<p>Estado: <span><input type="text" id="estado" value="${Estado}"></span></p>
+									<p>Numero:  <span><input type="text" id="numero" value="${Numero}"></span></p>
+                                    <p>Ubicacion: <span><input type="text" id="ubicacion" value="${Ubicaion}"></span></p>
+                                    </section>
+                                <button id="guardar" class="btnCerrar" >Aceptar</button>
+                            </dialog>
+                        `;
+						// Insertar el diálogo en el DOM
+						document.body.innerHTML += dialogoHTML;
+						// Obtener referencias a elementos del diálogo
+						const dialogo = document.getElementById("dialogo");
+						const btnCerrar = document.getElementById("btnCerrar");
+						const btnGuardar = document.getElementById("guardar");
+						// Agregar evento de clic al botón de cerrar para cerrar el diálogo
+						btnCerrar.addEventListener("click", () => {
+							dialogo.close();
+						});
+						// Agregar evento de clic al botón de guardar para actualizar el producto
+						btnGuardar.addEventListener("click", () => {
+							const nuevosDatos = {
+								CC: document.getElementById("Cc").value,
+								Nombre: document.getElementById("nombre").value,
+								Tipo: document.getElementById("tipo").value,
+								Estado: document.getElementById("estado").value,
+								Numero: document.getElementById("numero").value,
+								Ubicaion:document.getElementById("ubicacion").value,
+							};
+							const url = `http://localhost:3000/personas/${idEditar}`;
+							fetch(url, {
+								method: 'PUT',
+								headers: {
+									'Content-Type': 'application/json',
+								},
+								body: JSON.stringify(nuevosDatos),
+							})
+								.then(response => {
+									if (!response.ok) {
+										throw new Error('Error al actualizar el producto');
+									}
+									return response.json();
+								})
+								.then(data => {
+									console.log('Producto actualizado correctamente:', data);
+									// Cerrar el diálogo después de actualizar
+									dialogo.close();
+								})
+								.catch(error => {
+									console.error('Error al actualizar el producto:', error);
+								});
+						});
+						// Mostrar el diálogo
+						dialogo.showModal();
+					}
+					else {
+						console.log('No se encontró ningún producto con el ID especificado:', valorBuscado);
+					}
+				})
+				.catch(error => {
+					console.error('Error al obtener el inventario:', error);
+				});
+		}
+		else if (ids === "edit_tipoPersona") {
+			let valorBuscado = prompt("Ingrese el ID del producto que desea editar");
+
+			fetch('http://localhost:3000/personas')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const idEditar = valorBuscado; // ID del producto que deseas editar
+						// Obtener los datos del objeto encontrado
+						const { CC, Nombre, Tipo, Estado, Numero, Ubicaion } = objetoEncontrado;
+						// Construir el diálogo con los datos del objeto encontrado
+						const dialogoHTML =
+							`
+                            <dialog id="dialogo" class="dialogo">
+                                <section class="titleAdd">
+                                    <h2> Editar Producto <button id="btnCerrar">X</button></h2>
+                                </section>
+                                <section class="infoE">
+									<p>CC: <span><input type="text" id="Cc" value="${CC}"></span></p>
+                                    <p>Nombre: <span><input type="text" id="nombre" value="${Nombre}"></span></p>
+									<p>Tipo: <span><input type="text" id="tipo" value="${Tipo}"></span></p>
+									<p>Estado: <span><input type="text" id="estado" value="${Estado}"></span></p>
+									<p>Numero:  <span><input type="text" id="numero" value="${Numero}"></span></p>
+                                    <p>Ubicacion: <span><input type="text" id="ubicacion" value="${Ubicaion}"></span></p>
+                                    </section>
+                                <button id="guardar" class="btnCerrar" >Aceptar</button>
+                            </dialog>
+                        `;
+						// Insertar el diálogo en el DOM
+						document.body.innerHTML += dialogoHTML;
+						// Obtener referencias a elementos del diálogo
+						const dialogo = document.getElementById("dialogo");
+						const btnCerrar = document.getElementById("btnCerrar");
+						const btnGuardar = document.getElementById("guardar");
+						// Agregar evento de clic al botón de cerrar para cerrar el diálogo
+						btnCerrar.addEventListener("click", () => {
+							dialogo.close();
+						});
+						// Agregar evento de clic al botón de guardar para actualizar el producto
+						btnGuardar.addEventListener("click", () => {
+							const nuevosDatos = {
+								CC: document.getElementById("Cc").value,
+								Nombre: document.getElementById("nombre").value,
+								Tipo: document.getElementById("tipo").value,
+								Estado: document.getElementById("estado").value,
+								Numero: document.getElementById("numero").value,
+								Ubicaion:document.getElementById("ubicacion").value,
+							};
+							const url = `http://localhost:3000/personas/${idEditar}`;
+							fetch(url, {
+								method: 'PUT',
+								headers: {
+									'Content-Type': 'application/json',
+								},
+								body: JSON.stringify(nuevosDatos),
+							})
+								.then(response => {
+									if (!response.ok) {
+										throw new Error('Error al actualizar el producto');
+									}
+									return response.json();
+								})
+								.then(data => {
+									console.log('Producto actualizado correctamente:', data);
+									// Cerrar el diálogo después de actualizar
+									dialogo.close();
+								})
+								.catch(error => {
+									console.error('Error al actualizar el producto:', error);
+								});
+						});
+						// Mostrar el diálogo
+						dialogo.showModal();
+					}
+					else {
+						console.log('No se encontró ningún producto con el ID especificado:', valorBuscado);
+					}
+				})
+				.catch(error => {
+					console.error('Error al obtener el inventario:', error);
+				});
+		}
 
 
 	});
