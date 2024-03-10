@@ -51,7 +51,6 @@ h2 {
 
 
 
-
 /* ventana emergente*/
 #dialogo {
     top: 50%;
@@ -79,6 +78,11 @@ h2 {
 .info{
 	display: grid;
 	grid-template-columns: 25% 70%;
+	margin: 30px;
+}
+
+.info p{
+	margin-left: 10px;
 }
 
 .info input,
@@ -99,6 +103,7 @@ h2 {
 .titleAdd{
     background: #0b4481;
 }
+
 
 /* botones de las ventanas*/
 #btnCerrar{
@@ -165,27 +170,30 @@ h2 {
 }
 
 .infoE {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+	grid-template-columns: 1fr 1fr;;
+	justify-content: space-between;
     max-width: 894px; 
+	margin: 50px;
     border: 2px solid #000; 
     padding: 20px; 
 }
 
 .infoE p {
-	font-weight: bold;
-
+	margin: 0;
+	padding: 5px 0; 
+	height: 30px; 
+	display: flex;
+    align-items: center; 
+	font-weight: bold; 
 }
 
 .infoE p span {
 	font-weight: 500;
-	display: block;
-	margin: auto;
+	margin-left: auto;
+	margin-right: 70px;
 	text-align: center;
 }
-
-
 
 
 /*  search */
@@ -544,69 +552,31 @@ select:required {
 
 
 
-/* Responsive */
-@media screen and (max-width: 1024px) {
-	#content {
-		position: relative;
-		width: calc(100% - 60px);
-		transition: all .3s ease;
-	}
-	nav .nav-link,
-	nav .divider {
-		display: none;
-	}
-	nav {
-		width: 100%;
-		background: var(--dark);
-		height: 64px;
-		padding: 0 20px;
-		display: flex;
-		align-items: center;
-		grid-gap: 28px;
-		position: sticky;
-		top: 0;
-		left: 0;
-		z-index: 100;
-	}
-	.logo {
-		margin: 10px;
-		width: 35px;
-		height: auto;
-	}
-
-}
-
-
-
+/* Responsive para diferentes tipos de pantallas <3 */
 @media screen and (max-width: 768px) {
-	#content {
-		position: relative;
-		width: calc(100% - 60px);
-		transition: all .3s ease;
-	}
-	nav .nav-link,
-	nav .divider {
-		display: none;
-	}
-	nav {
-		width: 100%;
-		background: var(--dark);
-		height: 64px;
-		padding: 0 20px;
-		display: flex;
-		align-items: center;
-		grid-gap: 28px;
-		position: sticky;
-		top: 0;
-		left: 0;
-		z-index: 100;
-	}
 	.logo {
 		margin-left: 10px;
 		margin-right: 20px;
 		width: 30px;
 		height: auto;
 	}
+
+	.info {
+		grid-template-columns: 100%; 
+	}
+	.info p{
+		
+		margin-top: 10px;
+	}
+
+
+	.infoE {
+        margin: 20px; 
+    }
+
+    .infoE p span {
+        margin-right: 35px; 
+    }
 
 	/*  search */
 	#searchInput {
@@ -625,5 +595,28 @@ select:required {
 		background-color: white;
 	}
 
+
+}
+
+
+@media (max-width: 480px) {
+    .infoE {
+    	grid-template-columns: 1fr; 
+    	max-width: 90%; 
+        margin: 20px ; 
+        padding: 10px; 
+    }
+
+    .infoE p {
+    	padding: 5px 0; 
+    }
+
+    .infoE p span {
+        margin-right: 5px;
+    }
+
+	#content .divider{
+		display: none;
+	}
 
 }

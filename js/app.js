@@ -1,4 +1,4 @@
-/* Importaciones para el funcinamientto de las ventanas modal */
+/* Importaciones para el funcinamiento de las ventanas modal */
 import { addActive } from "./templatesG.js"
 import { addMarcas } from "./templatesG.js"
 import { addPeople } from "./templatesG.js"
@@ -546,7 +546,7 @@ listaItems2.forEach(item => {
 								<p>NroFormulario:  <span>${objetoEncontrado.NFormulario}</span></p>
 								<p>idMarca: <span>${objetoEncontrado.idMarca} </span></p>
 								<p>idCategoria: <span> ${objetoEncontrado.idCategoria} </span> </p>
-								<p>idTipo: <span> <span> ${objetoEncontrado.idTipo}</span></p>
+								<p>idTipo:  <span> ${objetoEncontrado.idTipo}</span></p>
 								<p>Valor Unitario: <span>${objetoEncontrado.ValorUnitario}</span> </p>
 								<p>idProveedor: <span> ${objetoEncontrado.idProveedor}</span></p>
 								<p>Nro Serial: <span> ${objetoEncontrado.serial}</span> </p>
@@ -647,25 +647,24 @@ listaItems2.forEach(item => {
 					if (objetoEncontrado) {
 						console.log(objetoEncontrado);
 						const dialogoHTML = `
-		<dialog id="dialogo" class="dialogo">
-			<section class="titleAdd">
-				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-			</section>
-			<div id="searchForm">   
-				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-			</div>
-			<section class="infoE">
-				<p>CC:   <span> ${objetoEncontrado.CC} </span> </p>
-				<p>Nombre: <span>${objetoEncontrado.Nombre}</span> </p>
-				<p>Tipo: <span> ${objetoEncontrado.Tipo} </span></p>$
-				<p>Estado: <span> ${objetoEncontrado.Estado}</span></p>
-				<p>Numero: <span>${objetoEncontrado.Numero}</span></p>
-				<p>Ubicacion: <span>${objetoEncontrado.Ubicaion} </span></p>
-			</section>
-			<button id="guardar" class="btnCerrar" >Aceptar</button>
-		</dialog>
-	`;
+					<dialog id="dialogo" class="dialogo">
+						<section class="titleAdd">
+							<h2>Buscar Producto <button id="btnCerrar">X</button></h2>
+						</section>
+						<div id="searchForm">   
+							<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
+							<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
+						</div>
+						<section class="infoE">
+							<p>CC:   <span> ${objetoEncontrado.CC} </span> </p>
+							<p>Nombre: <span>${objetoEncontrado.Nombre}</span> </p>
+							<p>Tipo: <span> ${objetoEncontrado.Tipo} </span></p>
+							<p>Estado: <span> ${objetoEncontrado.Estado}</span></p>
+							<p>Numero: <span>${objetoEncontrado.Numero}</span></p>
+							<p>Ubicacion: <span>${objetoEncontrado.Ubicaion} </span></p>
+						</section>
+						<button id="guardar" class="btnCerrar" >Aceptar</button>
+					</dialog> `;
 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
 						const dialogo = document.getElementById("dialogo");
 						dialogo.showModal();
@@ -703,15 +702,15 @@ listaItems2.forEach(item => {
 						const dialogoHTML = `
 			<dialog id="dialogo" class="dialogo">
 			<section class="titleAdd">
-				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
+				<h2>Buscar Producto <button id="btnCerrar">X</button></h2>
 			</section>
 			<div id="searchForm">   
 				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
 				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</div>
 			<section class="infoE">
-			<p>id Estado${objetoEncontrado} </p> 
-			<p>Estado  ${objetoEncontrado}</p>
+			<p>idEstado: <span>${objetoEncontrado}</span> </p> 
+			<p>Estado: <span>${objetoEncontrado}</span>  </p>
 			</section>
 			<button id="guardar" class="btnCerrar" >Aceptar</button>
 		</dialog>
@@ -759,13 +758,10 @@ listaItems2.forEach(item => {
 				<input type="text" id="searchInput" placeholder="Que producto Busca....">
 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 			</form> 
-			<section class="infoBorar">
-				<div>
-				<p>Tipo de persona</p>${objetoEncontrado.tipoPersona}
-				<p>Cargo</p>${objetoEncontrado.Cargo}
-				<p>CC</p>${objetoEncontrado.CC}
-				</div>
-				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
+			<section class="infoE">
+				<p>Tipo de persona:  <span>${objetoEncontrado.tipoPersona}</span>  </p>
+				<p>Cargo:  <span>${objetoEncontrado.Cargo}</span> </p>
+				<p>CC:  <span>${objetoEncontrado.CC}</span></p>
 			</section>
 			<button id="guardar" class="btnCerrar">Aceptar</button>
 		</dialog>
@@ -804,31 +800,28 @@ listaItems2.forEach(item => {
 					if (objetoEncontrado) {
 						console.log(objetoEncontrado);
 						const dialogoHTML = `
-		<dialog id="dialogo" class="dialogo">
-			<section class="titleAdd">
-				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-			</section>
-			<form id="searchForm">
-				<input type="text" id="searchInput" placeholder="Que producto Busca....">
-				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-			</form> 
-			<section class="infoBorar">
-				<div>
-				<p>CodTransaccion</p>${objetoEncontrado.CodTransaccion},
-				<p>nFormulario</p>${objetoEncontrado.nFormulario},
-				<p>idMarca</p>${objetoEncontrado.idMarca},
-				<p>idCategoria</p>${objetoEncontrado.idCategoria},
-				<p>serial</p>${objetoEncontrado.serial},
-				<piniciop>${objetoEncontrado.inicio},
-				<p>fin</p>${objetoEncontrado.fin},
-				<p>nitProveedor</p>${objetoEncontrado.nitProveedor},
-				<p>motivo</p>${objetoEncontrado.motivo}
-				</div>
-				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
-			</section>
-			<button id="guardar" class="btnCerrar">Aceptar</button>
-		</dialog>
-	`;
+							<dialog id="dialogo" class="dialogo">
+								<section class="titleAdd">
+									<h2>Buscar Producto  <button id="btnCerrar">X</button></h2>
+								</section>
+								<form id="searchForm">
+									<input type="text" id="searchInput" placeholder="Que producto Busca....">
+									<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+								</form> 
+								<section class="infoE">
+									<p>CodTransaccion: <span>${objetoEncontrado.CodTransaccion}</span></p>
+									<p>nFormulario:  <span>${objetoEncontrado.nFormulario}</span> </p>
+									<p>idMarca:  <span>${objetoEncontrado.idMarca}</span> </p>
+									<p>idCategoria: <span>${objetoEncontrado.idCategoria}</span> </p>
+									<p>serial:  <span>${objetoEncontrado.serial}</span> </p>
+									<p>Inicio: <span>${objetoEncontrado.inicio}</span></p>
+									<p>fin: <span>${objetoEncontrado.fin}</span></p>
+									<p>nitProveedor:  <span>${objetoEncontrado.nitProveedor}</span> </p>
+									<p>motivo: <span>${objetoEncontrado.motivo}</span> </p>
+								</section>
+								<button id="guardar" class="btnCerrar">Aceptar</button>
+							</dialog>
+						`;
 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
 						const dialogo = document.getElementById("dialogo");
 						dialogo.showModal();
@@ -863,32 +856,28 @@ listaItems2.forEach(item => {
 					if (objetoEncontrado) {
 						console.log(objetoEncontrado);
 						const dialogoHTML = `
-		<dialog id="dialogo" class="dialogo">
-			<section class="titleAdd">
-				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-			</section>
-			<form id="searchForm">
-				<input type="text" id="searchInput" placeholder="Que producto Busca....">
-				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-			</form> 
-			<section class="infoBorar">
-				<div>
-				<p>CodTransaccion</p> ${objetoEncontrado.CodTransaccion},
-				<p>NFormulario</p> ${objetoEncontrado.NFormulario},
-				<p>idMarca</p> ${objetoEncontrado.idMarca},
-				<p>idCategoria</p> ${objetoEncontrado.idCategoria},
-				<p>idTipo</p> ${objetoEncontrado.idTipo},
-				<p>ValorUnitario</p> ${objetoEncontrado.ValorUnitario},
-				<p>idProveedor</p> ${objetoEncontrado.idProveedor},
-				<p>serial</p> ${objetoEncontrado.serial},
-				<p>idEmpresaResponsable</p> ${objetoEncontrado.idEmpresaResponsable},
-				<p>idEstado</p> ${objetoEncontrado.idEstado},
-				</div>
-				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
-			</section>
-			<button id="guardar" class="btnCerrar">Aceptar</button>
-		</dialog>
-	`;
+							<dialog id="dialogo" class="dialogo">
+								<section class="titleAdd">
+									<h2>Buscar Producto <button id="btnCerrar">X</button></h2>
+								</section>
+								<form id="searchForm">
+									<input type="text" id="searchInput" placeholder="Que producto Busca....">
+									<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+								</form> 
+								<section class="infoE">
+									<p>CodTransaccion: <span> ${objetoEncontrado.CodTransaccion}</span></p> 
+									<p>NFormulario:  <span>${objetoEncontrado.NFormulario}</span> </p> 
+									<p>idMarca: <span>${objetoEncontrado.idMarca}</span> </p> 
+									<p>idCategoria: <span>${objetoEncontrado.idCategoria}</span>  /p> 
+									<p>idTipo: <span>${objetoEncontrado.idTipo}</span></p> 
+									<p>ValorUnitario: <span>${objetoEncontrado.ValorUnitario}</span></p> 
+									<p>idProveedor</p> ${objetoEncontrado.idProveedor}
+									<p>serial: <span>${objetoEncontrado.serial}</span></p> 
+									<p>idEmpresaResponsable: <span>${objetoEncontrado.idEmpresaResponsable}</span></p> 
+									<p>idEstado: <span>${objetoEncontrado.idEstado}</span> </p> 
+								</section>
+								<button id="guardar" class="btnCerrar">Aceptar</button>
+							</dialog>`;
 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
 						const dialogo = document.getElementById("dialogo");
 						dialogo.showModal();
@@ -918,56 +907,11 @@ listaItems2.forEach(item => {
 /*Fin De Buscar */
 
 
+/*Inicio De Editar */
+
+/*Fin De Editar */
 
 
+/*Inicio De Eliminar */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const searchInput = document.getElementById('searchInput');
-// let products = []; // Array para almacenar los productos
-
-
-// fetch('./../data/campusData.json')
-// 	.then(response => response.json())
-// 	.then(data => {
-// 		products = data; // Almacenar los productos en el array products
-// 	})
-// 	.catch(error => {
-// 		console.error('Error al cargar los productos:', error);
-// 	});
-
-// searchInput.addEventListener('input', function(event) {
-// 	const searchTerm = event.target.value.toLowerCase().trim();
-
-// 	const filteredProducts = products.filter(product => {
-// 		return product.name.toLowerCase().includes(searchTerm);
-// 	});
-// });
-
-// function displayFilteredProducts(filteredProducts) {
-// 	const dialogo = document.getElementById('dialogo'); // Obtener la referencia al diálogo
-
-// 	// Limpiar el contenido existente dentro del diálogo
-// 	const infoE = dialogo.querySelector('.infoE');
-// 	infoE.innerHTML = '';
-
-// 	// Construir y agregar los elementos de producto al diálogo
-// 	filteredProducts.forEach(product => {
-// 		const productElement = document.createElement('div');
-// 		productElement.textContent = `${product.name} - $${product.price}`;
-// 		infoE.appendChild(productElement);
-// 	});
-// }
-
+/*Fin De Eliminar */
