@@ -7,6 +7,105 @@ import { addTipoPersona } from "./templatesG.js"
 import { addTipoMovAct } from "./templatesG.js"
 import { addTipoActivo } from "./templatesG.js"
 // SIDEBAR DROPDOWN
+document.body.innerHTML +=` 
+<section id="sidebar">
+		<a href="#" class="brand"><img class="logo" src="./images/logo-campus.png" alt="Logo"></i> CampusLands </a>
+		<ul class="side-menu">
+			<li id="active" data-accion="activos">
+				<a href="#" class="active" ><i class="fa-solid fa-chart-line icon"></i> Activos <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add" href=""> Agregar</a></li>
+					<li><a id="edit" href="">Editar</a></li>
+					<li><a id="delete" href=""> Eliminar </a></li>
+					<li><a id="search" href=""> Buscar </a></li>
+				</ul>
+			</li>
+			<li id="marca"  data-accion="marcas">
+				<a href="#" class="active" ><i class="fa-regular fa-window-maximize icon"></i> Marcas <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_marca" href=""> Agregar</a></li>
+					<li><a id="edit_marca" href="">Editar</a></li>
+					<li><a id="delete_marca" href=""> Eliminar </a></li>
+					<li><a id="search_marca" href=""> Buscar </a></li>
+				</ul>
+			</li>
+			<li  data-accion="persona">
+				<a  href="#" class="active" ><i class="fa-solid fa-user icon"></i> Persona <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_persona" href=""> Agregar</a></li>
+					<li><a id="edit_persona" href="">Editar</a></li>
+					<li><a id="delete_persona" href=""> Eliminar </a></li>
+					<li><a id="search_persona" href=""> Buscar </a></li>
+				</ul>
+			</li>
+			<li  data-accion="estado">
+				<a href="#" class="active"  ><i class="fa-solid fa-screwdriver-wrench icon"></i> Estado <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_estado" href=""> Agregar</a></li>
+					<li><a id="edit_estado" href="">Editar</a></li>
+					<li><a id="delete_estado" href=""> Eliminar </a></li>
+					<li><a id="search_estado" href=""> Buscar </a></li>
+				</ul>
+			</li>
+			<li   data-accion="tipoPersona">
+				<a href="#" class="active" ><i class="fa-solid fa-user-secret icon"></i> TipoPersona <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_tipoPersona" href=""> Agregar</a></li>
+					<li><a id="edit_tipoPersona" href="">Editar</a></li>
+					<li><a id="delete_tipoPersona" href=""> Eliminar </a></li>
+					<li><a id="search_tipoPersona" href=""> Buscar </a></li>
+				</ul>
+			</li>
+			<li  data-accion="tipoMovAct">
+				<a href="#" class="active"><i class="fa-solid fa-laptop icon"></i> TipoMovAct <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_tipoMovAct" href=""> Agregar</a></li>
+					<li><a id="edit_tipoMovAct" href="">Editar</a></li>
+					<li><a id="delete_tipoMovAct" href=""> Eliminar </a></li>
+					<li><a id="search_tipoMovAct" href=""> Buscar </a></li>
+				</ul>
+			</li>
+			<li  data-accion="tipoActivo">
+				<a href="#" class="active"><i class="fa-brands fa-slack icon"></i> TipoActivo <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_tipoActivo" href=""> Agregar</a></li>
+					<li><a id="edit_tipoActivo" href="">Editar</a></li>
+					<li><a id="delete_tipoActivo" href=""> Eliminar </a></li>
+					<li><a id="search_tipoActivo" href=""> Buscar </a></li>
+				</ul>
+			</li>
+            <li data-accion="asignacion">
+				<a href="#" class="active"><i class="fa-solid fa-earth-asia icon"></i> Asignacion <i class="fa-solid fa-angle-right  icon-right"></i></a> 
+				<ul class="side-dropdown">
+					<li><a id="add_asignacion" href=""> Crear Asignacion</a></li>
+					<li><a id="edit_asignacion" href="">Asignar Activos</a></li>
+					<li><a id="delete_asignacion" href=""> Retornar Activo </a></li>
+				</ul>
+			</li>
+			<li class="divider text" data-text="© 2024 Camper"> © 2024 Camper</li>
+		</ul>
+	</section>
+	<!-- NAVBAR -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='fa-solid fa-bars toggle-sidebar' ></i>
+                <form id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Que Busca...." >
+                    <button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+ 			<span class="divider"></span>
+			<div class="profile">
+				<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+				<ul class="profile-link">
+					<li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+					<li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+					<li><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+`
+
 const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
 const sidebar = document.getElementById('sidebar');
 allDropdown.forEach(item => {
@@ -899,507 +998,6 @@ listaItems2.forEach(item => {
 		}
 	});
 });
-/*Fin De Buscar */
-/*Inicio De Editar */
-// const listaItems3 = document.querySelectorAll('.side-dropdown li');
-// listaItems3.forEach(item => {
-// 	const a = item.querySelector('a');
-// 	const ids = a.getAttribute('id');
-// 	a.addEventListener('click', function (event) {
-// 		event.preventDefault();
-// 		if (ids === "edit") {
-
-// 			// const dialogoHTML = `
-// 			// 			<dialog id="dialogo" class="dialogo">
-// 			// 				<section class="titleAdd">
-// 			// 					<h2> Buscar Producto <button id="btnCerrar">X</button></h2>
-// 			// 				</section>
-// 			// 				<div id="searchForm">   
-// 			// 					<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-// 			// 					<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 			// 				</div>
-// 			// 				<section class="infoE">
-// 			// 					<p>CodTransaccion: <span><input type="text" id="newCodeTra"></span></p>
-// 			// 					<p>NroFormulario:  <span><input type="text" id="newNroFormulario"></span></p>
-// 			// 					<p>idMarca: <span><input type="text" id="idMarca"></span></p>
-// 			// 					<p>idCategoria: <span> <input type="text" id="idCategoria"> </span> </p>
-// 			// 					<p>idTipo: <span> <span> <input type="text" id="idTipo"></span></p>
-// 			// 					<p>Valor Unitario: <span><input type="text" id="Valor"></span> </p>
-// 			// 					<p>idProveedor: <span> <input type="text" id="idProveedor"></span></p>
-// 			// 					<p>Nro Serial: <span> <input type="text" id="Serial"></span> </p>
-// 			// 					<p>EmpresaResponsable: <span> <input type="text" id="EmpresaResponsable"></span> </p>
-// 			// 					<p>idEstado: <span><input type="text" id="idEstado"></span> </p>
-// 			// 				</section>
-// 			// 				<button id="guardar" class="btnCerrar" >Aceptar</button>
-// 			// 			</dialog>
-// 			// 		`;
-// 			let valorBuscado = prompt("ingrese el id quedesa editar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/Inventario%20Campuslands')
-// 				.then(response => response.json())
-// 				.then(data => {
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const idEditar = valorBuscado; // ID de la persona que deseas editar
-// 						// var ide= document.getElementById("newCodeTra").value;
-// 						// var form = document.getElementById("newNroFormulario").value;
-// 						// Nuevos datos para actualizar
-
-
-
-
-
-
-
-// 						const dialogoHTML = `
-// 						<dialog id="dialogo" class="dialogo">
-// 							<section class="titleAdd">
-// 								<h2> Buscar Producto <button id="btnCerrar">X</button></h2>
-// 							</section>
-// 							<div id="searchForm">   
-// 								<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-// 								<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 							</div>
-// 							<section class="infoE">
-// 								<p>CodTransaccion: <span><input type="text" id="newCodeTra"></span></p>
-// 								<p>NroFormulario:  <span><input type="text" id="newNroFormulario"></span></p>
-// 								<p>idMarca: <span><input type="text" id="idMarca"></span></p>
-// 								<p>idCategoria: <span> <input type="text" id="idCategoria"> </span> </p>
-// 								<p>idTipo: <span> <span> <input type="text" id="idTipo"></span></p>
-// 								<p>Valor Unitario: <span><input type="text" id="Valor"></span> </p>
-// 								<p>idProveedor: <span> <input type="text" id="idProveedor"></span></p>
-// 								<p>Nro Serial: <span> <input type="text" id="Serial"></span> </p>
-// 								<p>EmpresaResponsable: <span> <input type="text" id="EmpresaResponsable"></span> </p>
-// 								<p>idEstado: <span><input type="text" id="idEstado"></span> </p>
-// 							</section>
-// 							<button id="guardar" class="btnCerrar" >Aceptar</button>
-// 						</dialog>
-// 					`;
-
-
-
-// 						const nuevosDatos = {
-// 							CodTransaccion: prompt("ingrese el  nuevo Codigo de la Transaccion "),
-// 							NFormulario: prompt("ingrese el nuevo  NFormulario"),
-// 							idMarca: prompt("ingrese el nuevo idMarca "),
-// 							idCategoria: prompt("ingrese el nuevo idCategoria "),
-// 							idTipo: prompt("ingrese el nuevo  idTipo"),
-// 							ValorUnitario: prompt("ingrese el nuevo ValorUnitario "),
-// 							idProveedor: prompt("ingrese el nuevo idProveedor "),
-// 							serial: prompt("ingrese el nuevo serial "),
-// 							idEmpresaResponsable: prompt("ingrese el nuevo idEmpresaResponsable "),
-// 							idEstado: prompt("ingrese el nuevo idEstado ")
-// 							// Agrega más campos si es necesario
-// 						};
-
-// 						// URL del recurso que deseas actualizar (asumiendo que sea '/personas/{id}')
-// 						const url = `http://localhost:3000/Inventario%20Campuslands/${idEditar}`;
-
-// 						fetch(url, {
-// 							method: 'PUT', // Método HTTP PUT para actualizar
-// 							headers: {
-// 								'Content-Type': 'application/json',
-// 							},
-// 							body: JSON.stringify(nuevosDatos), // Convertimos los nuevos datos a JSON
-// 						})
-// 							.then(response => {
-// 								if (!response.ok) {
-// 									throw new Error('Error al actualizar la persona');
-// 								}
-// 								return response.json();
-// 							})
-// 							.then(data => {
-// 								console.log('Persona actualizada correctamente:', data);
-// 							})
-// 							.catch(error => {
-// 								console.error('Error al actualizar la persona:', error);
-// 							});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-
-
-
-
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 				.catch(error => console.error('Error al obtener los datos:', error));
-// 		}
-// 		else if (ids === "search_marca") {
-// 			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/Marcas')
-// 				.then(response => response.json())
-// 				.then(data => {
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const dialogoHTML = `
-// 						<dialog id="dialogo" class="dialogo">
-// 							<section class="titleAdd">
-// 								<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-// 							</section>
-// 							<div id="searchForm">   
-// 								<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-// 								<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 							</div>
-// 							<section class="infoE">
-// 							<p>Nit: <span>${objetoEncontrado.Nit}</span></p>
-// 							<p>Nombre Marca: <span> ${objetoEncontrado.NombreMarca} </span> </p>
-// 							<p>idCategoria: <span> ${objetoEncontrado.Categoria} </span> </p>
-// 							<p>idTipo: <span> ${objetoEncontrado.tipo} </span> </p>
-// 							<p>Valor Unitario: <span> ${objetoEncontrado.price} </span> </p>
-// 							<p>proveedor: <span> ${objetoEncontrado.proveedor} </span> </p>
-// 							<p>idProveedor: <span> ${objetoEncontrado.proveedor} </span> </p>
-// 							<p> Nombre del Proveedor: <span> ${objetoEncontrado.nombreProveedor} </span> </p>
-// 							</section>
-// 							<button id="guardar" class="btnCerrar" >Aceptar</button>
-// 						</dialog>
-// 					`;
-
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 		}
-// 		else if (ids === "search_persona") {
-// 			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/personas')
-// 				.then(response => response.json())
-// 				.then(data => {
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const dialogoHTML = `
-// 		<dialog id="dialogo" class="dialogo">
-// 			<section class="titleAdd">
-// 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-// 			</section>
-// 			<div id="searchForm">   
-// 				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-// 				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 			</div>
-// 			<section class="infoE">
-// 				<p>CC:   <span> ${objetoEncontrado.CC} </span> </p>
-// 				<p>Nombre: <span>${objetoEncontrado.Nombre}</span> </p>
-// 				<p>Tipo: <span> ${objetoEncontrado.Tipo} </span></p>$
-// 				<p>Estado: <span> ${objetoEncontrado.Estado}</span></p>
-// 				<p>Numero: <span>${objetoEncontrado.Numero}</span></p>
-// 				<p>Ubicacion: <span>${objetoEncontrado.Ubicaion} </span></p>
-// 			</section>
-// 			<button id="guardar" class="btnCerrar" >Aceptar</button>
-// 		</dialog>
-// 	`;
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 		}
-// 		else if (ids === "search_estado") {
-// 			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/estado')
-// 				.then(response => response.json())
-// 				.then(data => {
-
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const dialogoHTML = `
-// 			<dialog id="dialogo" class="dialogo">
-// 			<section class="titleAdd">
-// 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-// 			</section>
-// 			<div id="searchForm">   
-// 				<input type="text" id="searchInput" placeholder="¿Qué producto busca?">
-// 				<button id="searchEdit"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 			</div>
-// 			<section class="infoE">
-// 			<p>id Estado${objetoEncontrado} </p> 
-// 			<p>Estado  ${objetoEncontrado}</p>
-// 			</section>
-// 			<button id="guardar" class="btnCerrar" >Aceptar</button>
-// 		</dialog>
-// 	`;
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 		}
-// 		else if (ids === "search_tipoPersona") {
-// 			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/tipoPersona')
-// 				.then(response => response.json())
-// 				.then(data => {
-
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const dialogoHTML = `
-// 		<dialog id="dialogo" class="dialogo">
-// 			<section class="titleAdd">
-// 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-// 			</section>
-// 			<form id="searchForm">
-// 				<input type="text" id="searchInput" placeholder="Que producto Busca....">
-// 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 			</form> 
-// 			<section class="infoBorar">
-// 				<div>
-// 				<p>Tipo de persona</p>${objetoEncontrado.tipoPersona}
-// 				<p>Cargo</p>${objetoEncontrado.Cargo}
-// 				<p>CC</p>${objetoEncontrado.CC}
-// 				</div>
-// 				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
-// 			</section>
-// 			<button id="guardar" class="btnCerrar">Aceptar</button>
-// 		</dialog>
-// 	`;
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 		}
-// 		else if (ids === "search_tipoMovAct") {
-// 			let valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/tipoMovActivo')
-// 				.then(response => response.json())
-// 				.then(data => {
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const dialogoHTML = `
-// 		<dialog id="dialogo" class="dialogo">
-// 			<section class="titleAdd">
-// 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-// 			</section>
-// 			<form id="searchForm">
-// 				<input type="text" id="searchInput" placeholder="Que producto Busca....">
-// 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 			</form> 
-// 			<section class="infoBorar">
-// 				<div>
-// 				<p>CodTransaccion</p>${objetoEncontrado.CodTransaccion},
-// 				<p>nFormulario</p>${objetoEncontrado.nFormulario},
-// 				<p>idMarca</p>${objetoEncontrado.idMarca},
-// 				<p>idCategoria</p>${objetoEncontrado.idCategoria},
-// 				<p>serial</p>${objetoEncontrado.serial},
-// 				<piniciop>${objetoEncontrado.inicio},
-// 				<p>fin</p>${objetoEncontrado.fin},
-// 				<p>nitProveedor</p>${objetoEncontrado.nitProveedor},
-// 				<p>motivo</p>${objetoEncontrado.motivo}
-// 				</div>
-// 				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
-// 			</section>
-// 			<button id="guardar" class="btnCerrar">Aceptar</button>
-// 		</dialog>
-// 	`;
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 		}
-// 		else if (ids === "search_tipoActivo") {
-// 			var valorBuscado = prompt("ingrese el id a buscar")  /*Id del producto abuscar */
-// 			fetch('http://localhost:3000/tipoActivo')
-// 				.then(response => response.json())
-// 				.then(data => {
-// 					const inventario = data;
-// 					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
-// 					if (objetoEncontrado) {
-// 						console.log(objetoEncontrado);
-// 						const dialogoHTML = `
-// 		<dialog id="dialogo" class="dialogo">
-// 			<section class="titleAdd">
-// 				<h2>Editar Producto <button id="btnCerrar">X</button></h2>
-// 			</section>
-// 			<form id="searchForm">
-// 				<input type="text" id="searchInput" placeholder="Que producto Busca....">
-// 				<button type="submit" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-// 			</form> 
-// 			<section class="infoBorar">
-// 				<div>
-// 				<p>CodTransaccion</p> ${objetoEncontrado.CodTransaccion},
-// 				<p>NFormulario</p> ${objetoEncontrado.NFormulario},
-// 				<p>idMarca</p> ${objetoEncontrado.idMarca},
-// 				<p>idCategoria</p> ${objetoEncontrado.idCategoria},
-// 				<p>idTipo</p> ${objetoEncontrado.idTipo},
-// 				<p>ValorUnitario</p> ${objetoEncontrado.ValorUnitario},
-// 				<p>idProveedor</p> ${objetoEncontrado.idProveedor},
-// 				<p>serial</p> ${objetoEncontrado.serial},
-// 				<p>idEmpresaResponsable</p> ${objetoEncontrado.idEmpresaResponsable},
-// 				<p>idEstado</p> ${objetoEncontrado.idEstado},
-// 				</div>
-// 				<div><button class="btnBorrar" id="btnBorrar">Borrar</button></div>
-// 			</section>
-// 			<button id="guardar" class="btnCerrar">Aceptar</button>
-// 		</dialog>
-// 	`;
-// 						document.body.insertAdjacentHTML('beforeend', dialogoHTML);
-// 						const dialogo = document.getElementById("dialogo");
-// 						dialogo.showModal();
-// 						const btnCerrar = dialogo.querySelector("#btnCerrar");
-// 						btnCerrar.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnCerrara = dialogo.querySelector(".btnCerrar");
-// 						btnCerrara.addEventListener('click', function () {
-// 							dialogo.close();
-// 							dialogo.remove();
-// 						});
-// 						const btnSearchEdit = dialogo.querySelector("#searchEdit");
-// 						btnSearchEdit.addEventListener('click', function () {
-// 							alert("Hola");
-// 						});
-// 						console.log("Objeto encontrado:", objetoEncontrado);
-// 					} else {
-// 						console.log("No se encontró ningún objeto con el valor buscado en el ID.");
-// 						/*AGREGAR UNA VENTAN DE ERROR*/
-// 					}
-// 				})
-// 		}
-// 	});
-// });
 const listaItems3 = document.querySelectorAll('.side-dropdown li');
 listaItems3.forEach(item => {
 	const a = item.querySelector('a');
@@ -1499,7 +1097,7 @@ listaItems3.forEach(item => {
 					console.error('Error al obtener el inventario:', error);
 				});
 		}
-		if (ids === "edit_marca") {
+		else if (ids === "edit_marca") {
 			let valorBuscado = prompt("Ingrese el ID del producto que desea editar");
 			fetch('http://localhost:3000/Marcas')
 				.then(response => response.json())
@@ -1526,7 +1124,6 @@ listaItems3.forEach(item => {
 										<p>proveedor: <span><input type="text" id="idTipo" value="${proveedor}"></span></p>
 										<p>idProveedor: <span><input type="text" id="Valor" value="${idProveedor}"></span></p>
 										<p>nombreProveedor: <span><input type="text" id="Proveedor" value="${nombreProveedor}"></span></p>
-										
 									</section>
 									<button id="guardar" class="btnCerrar" >Aceptar</button>
 								</dialog>
@@ -1550,10 +1147,178 @@ listaItems3.forEach(item => {
 								price: document.getElementById("idCategoria").value,
 								proveedor: document.getElementById("idTipo").value,
 								idProveedor: document.getElementById("Valor").value,
-								nombreProveedor: document.getElementById("Proveedor").value,
-								
+								nombreProveedor: document.getElementById("Proveedor").value,	
 							};
 							const url = `http://localhost:3000/Marcas/${idEditar}`;
+							fetch(url, {
+								method: 'PUT',
+								headers: {
+									'Content-Type': 'application/json',
+								},
+								body: JSON.stringify(nuevosDatos),
+							})
+								.then(response => {
+									if (!response.ok) {
+										throw new Error('Error al actualizar el producto');
+									}
+									return response.json();
+								})
+								.then(data => {
+									console.log('Producto actualizado correctamente:', data);
+									// Cerrar el diálogo después de actualizar
+									dialogo.close();
+								})
+								.catch(error => {
+									console.error('Error al actualizar el producto:', error);
+								});
+						});
+						// Mostrar el diálogo
+						dialogo.showModal();
+					}
+					else {
+						console.log('No se encontró ningún producto con el ID especificado:', valorBuscado);
+					}
+				})
+				.catch(error => {
+					console.error('Error al obtener el inventario:', error);
+				});
+		}
+		else if (ids === "edit_estado") {
+			let valorBuscado = prompt("Ingrese el ID del producto que desea editar");
+			fetch('http://localhost:3000/estado')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const idEditar = valorBuscado; // ID del producto que deseas editar
+						// Obtener los datos del objeto encontrado
+						const { id, NombreEstado } = objetoEncontrado;
+						// Construir el diálogo con los datos del objeto encontrado
+						const dialogoHTML =
+							`
+								<dialog id="dialogo" class="dialogo">
+									<section class="titleAdd">
+										<h2> Editar Producto <button id="btnCerrar">X</button></h2>
+									</section>
+									<section class="infoE">
+									<p>idEstado </p> <input id="idState" value="${id}" type="text" required>
+									<p>Estado</p><input id="newState" type="text" value="${NombreEstado}" required> 
+									</section>
+									<button id="guardar" class="btnCerrar" >Aceptar</button>
+								</dialog>
+							`;
+						// Insertar el diálogo en el DOM
+						document.body.innerHTML += dialogoHTML;
+						// Obtener referencias a elementos del diálogo
+						const dialogo = document.getElementById("dialogo");
+						const btnCerrar = document.getElementById("btnCerrar");
+						const btnGuardar = document.getElementById("guardar");
+						// Agregar evento de clic al botón de cerrar para cerrar el diálogo
+						btnCerrar.addEventListener("click", () => {
+							dialogo.close();
+						});
+						// Agregar evento de clic al botón de guardar para actualizar el producto
+						btnGuardar.addEventListener("click", () => {
+							const nuevosDatos = {
+								NombreEstado:document.getElementById("newState").value,
+									
+							};
+							const url = `http://localhost:3000/estado/${idEditar}`;
+							fetch(url, {
+								method: 'PUT',
+								headers: {
+									'Content-Type': 'application/json',
+								},
+								body: JSON.stringify(nuevosDatos),
+							})
+								.then(response => {
+									if (!response.ok) {
+										throw new Error('Error al actualizar el producto');
+									}
+									return response.json();
+								})
+								.then(data => {
+									console.log('Producto actualizado correctamente:', data);
+									// Cerrar el diálogo después de actualizar
+									dialogo.close();
+								})
+								.catch(error => {
+									console.error('Error al actualizar el producto:', error);
+								});
+						});
+						// Mostrar el diálogo
+						dialogo.showModal();
+					}
+					else {
+						console.log('No se encontró ningún producto con el ID especificado:', valorBuscado);
+					}
+				})
+				.catch(error => {
+					console.error('Error al obtener el inventario:', error);
+				});
+		}
+		else if (ids === "edit_tipoMovAct") {
+			let valorBuscado = prompt("Ingrese el ID del producto que desea editar");
+
+			fetch('http://localhost:3000/tipoMovActivo')
+				.then(response => response.json())
+				.then(data => {
+					const inventario = data;
+					const objetoEncontrado = inventario.find(item => item.id === valorBuscado);
+					if (objetoEncontrado) {
+						console.log(objetoEncontrado);
+						const idEditar = valorBuscado; // ID del producto que deseas editar
+						// Obtener los datos del objeto encontrado
+						const { CodTransaccion, nFormulario, idMarca, idCategoria, serial, inicio, fin, nitProveedor, motivo } = objetoEncontrado;
+						// Construir el diálogo con los datos del objeto encontrado
+						const dialogoHTML =
+							`
+                            <dialog id="dialogo" class="dialogo">
+                                <section class="titleAdd">
+                                    <h2> Editar Producto <button id="btnCerrar">X</button></h2>
+                                </section>
+                                <section class="infoE">
+                                    <p>CodTransaccion: <span><input type="text" id="newCodeTra" value="${CodTransaccion}"></span></p>
+                                    <p>NroFormulario:  <span><input type="text" id="newNroFormulario" value="${nFormulario}"></span></p>
+                                    <p>idMarca: <span><input type="text" id="idMarca" value="${idMarca}"></span></p>
+                                    <p>idCategoria: <span><input type="text" id="idCategoria" value="${idCategoria}"></span></p>
+                                    <p>NroSerial: <span><input type="text" id="serial" value="${serial}"></span></p>
+                                    <p>Puntoincial: <span><input type="text" id="idini" value="${inicio}"></span></p>
+                                    <p>Puntofinal: <span><input type="text" id="idfin" value="${fin}"></span></p>
+                                    <p>Nitproveedor: <span><input type="text" id="nit" value="${nitProveedor}"></span></p>
+                                    <p>Motivo: <span><input type="text" id="motivo" value="${motivo}"></span></p>
+                                </section>
+                                <button id="guardar" class="btnCerrar" >Aceptar</button>
+                            </dialog>
+                        `;
+						// Insertar el diálogo en el DOM
+						document.body.innerHTML += dialogoHTML;
+						// Obtener referencias a elementos del diálogo
+						const dialogo = document.getElementById("dialogo");
+						const btnCerrar = document.getElementById("btnCerrar");
+						const btnGuardar = document.getElementById("guardar");
+						// Agregar evento de clic al botón de cerrar para cerrar el diálogo
+						btnCerrar.addEventListener("click", () => {
+							dialogo.close();
+						});
+						// Agregar evento de clic al botón de guardar para actualizar el producto
+						btnGuardar.addEventListener("click", () => {
+							const nuevosDatos = {
+								CodTransaccion: document.getElementById("newCodeTra").value,
+								nFormulario: document.getElementById("newNroFormulario").value,
+								idMarca: document.getElementById("idMarca").value,
+								idCategoria: document.getElementById("idCategoria").value,
+								serial: document.getElementById("serial").value,
+							
+								inicio: document.getElementById("idini").value,
+								fin: document.getElementById("idfin").value,
+								
+								nitProveedor: document.getElementById("nit").value,
+								motivo: document.getElementById("motivo").value
+							};
+							const url = `http://localhost:3000/tipoMovActivo/${idEditar}`;
 							fetch(url, {
 								method: 'PUT',
 								headers: {
@@ -1590,42 +1355,5 @@ listaItems3.forEach(item => {
 
 
 
-
-
-
-
-
-
 	});
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Fin De Editar */
-
-
-/*Inicio De Eliminar */
-
-/*Fin De Eliminar */

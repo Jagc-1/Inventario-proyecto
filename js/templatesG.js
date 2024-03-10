@@ -133,7 +133,6 @@ export const addTipoMovAct = `
     <section class="titleAdd"> <h2>Agrega Movimiento <button id="btnCerrar">X</button></h2></section>
     <section class="info">
     <p>CodTransaccion</p><input id="idTransation" type="text" autofocus  required>
-
     <p>NroFormulario</p><input id="Nform" type="text" required>
     <p>idMarca</p><input id="idMarca" type="text" required>
     <p>idCategoria</p>
@@ -143,14 +142,10 @@ export const addTipoMovAct = `
       <option > Electrodomestico </option>
       <option > Juego </option>
     </select>
-
-    <p>Nro Serial</p><input id="idSerial"type="text" required>
-
-    <p>Punto incial</p><input id="idInicio" type="text" required>
-    <p>Punto final</p><input id="idFinal" type="text" required>
-    <p>Nit proveedor</p><input id="idProveedor"type="text" required placeholder="En caso de ser un dispositivo nuevo">
-   
-   
+    <p>NroSerial</p><input id="idSerial"type="text" required>
+    <p>Puntoincial</p><input id="idInicio" type="text" required>
+    <p>Puntofinal</p><input id="idFinal" type="text" required>
+    <p>Nitproveedor</p><input id="idProveedor"type="text" required placeholder="En caso de ser un dispositivo nuevo">
     <p>Motivo	</p>
     <select class="form-control" id="idEstate" required>
       <option >No Asignado</option>

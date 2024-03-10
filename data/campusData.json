@@ -51,6 +51,19 @@
       "idEmpresaResponsable": "",
       "idEstado": "",
       "id": "4"
+    },
+    {
+      "CodTransaccion": "asdfas",
+      "NFormulario": "f",
+      "idMarca": "dfasf",
+      "idCategoria": "fsdfa",
+      "idTipo": "dfasdf",
+      "ValorUnitario": "",
+      "idProveedor": "asfaf",
+      "serial": "f",
+      "idEmpresaResponsable": "asf",
+      "idEstado": "",
+      "id": "f"
     }
   ],
   "categoriaActivos": [],
@@ -78,10 +91,44 @@
     }
   ],
   "tipoPersona": [],
-  "tipoMovActivo": [],
+  "tipoMovActivo": [
+    {
+      "id": "fer",
+      "CodTransaccion": "123",
+      "nFormulario": "fer",
+      "idMarca": "raer",
+      "idCategoria": "Equipo de Computo",
+      "serial": "132",
+      "inicio": "",
+      "fin": "",
+      "nitProveedor": "",
+      "motivo": "No Asignado"
+    },
+    {
+      "CodTransaccion": "12",
+      "nFormulario": "uafdsndefined",
+      "idMarca": "sdf",
+      "idCategoria": "asffs",
+      "serial": "undefinedfsadf",
+      "inicio": "undasfafefined",
+      "fin": "undesfdasafined",
+      "nitProveedor": "undeffsdafined",
+      "motivo": "uadsafndefasffined",
+      "id": "13"
+    }
+  ],
   "historialActivo": [],
   "proveedor": [],
-  "estado": [],
+  "estado": [
+    {
+      "id": "123",
+      "NombreEstado": "adds"
+    },
+    {
+      "NombreEstado": "fdsafadsfaf",
+      "id": "124"
+    }
+  ],
   "telefonoPersona": [],
   "asignacion": [],
   "tipoActivo": [],
