@@ -167,6 +167,22 @@ h2 {
 	margin-right: 70px;
 	text-align: center;
 }
+
+.infoE input,
+.infoE select{
+	margin-top: 10px;
+	width: 98%;
+	border: none;
+	border-bottom: 1px solid #333;
+}
+.infoE input:focus,
+.infoE select:focus{
+	outline: none;
+    border: none;
+	border-bottom: 1px solid #333;
+}
+
+
 /*  search */
 #searchInput {
     padding: 10px;
@@ -473,7 +489,7 @@ nav .profile .profile-link {
 	position: absolute;
 	top: calc(100% - 10px);
 	right: 0;
-	background: var(--light);
+	background: var(--dark-blue);
 	padding: 10px 0;
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 	border-radius: 10px;
@@ -484,28 +500,34 @@ nav .profile .profile-link {
 }
 nav .profile .profile-link.show {
 	opacity: 1;
-	pointer-events: visible;
 	top: 100%;
-	z-index: 9999;
 }
+
 nav .profile .profile-link a {
 	padding: 10px 16px;
 	display: flex;
 	grid-gap: 10px;
 	font-size: 14px;
-	color: var(--dark);
+	color: var(--light);
 	align-items: center;
 	transition: all .3s ease;
 }
 nav .profile .profile-link a:hover {
 	background: var(--grey);
 }
+
 #searchForm input:required,
 select:required {
 	content:"*";
  }
 /* NAVBAR */
 /* CONTENT */
+
+form [method="dialog"]{
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
 
 /* Responsive para diferentes tipos de pantallas <3 */
 @media screen and (max-width: 768px) {

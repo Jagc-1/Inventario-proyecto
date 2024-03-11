@@ -1,8 +1,68 @@
 {
-  "Inventario Campuslands": [],
+  "Inventario Campuslands": [
+    {
+      "id": "123",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "123",
+      "idEmpresaResponsable": "",
+      "idEstado": ""
+    },
+    {
+      "id": "123",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "123",
+      "idEmpresaResponsable": "",
+      "idEstado": ""
+    },
+    {
+      "id": "12",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "12",
+      "idEmpresaResponsable": "",
+      "idEstado": ""
+    },
+    {
+      "id": "3",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "3",
+      "idEmpresaResponsable": "",
+      "idEstado": ""
+    }
+  ],
   "categoriaActivos": [],
   "Marcas": [],
-  "tipoPersona": [],
+  "tipoPersona": [
+    {
+      "id": "1",
+      "tipoPersona": "",
+      "Cargo": "",
+      "CC": "1"
+    }
+  ],
   "tipoMovActivo": [
     {
       "CodTransaccion": "124",
@@ -21,7 +81,21 @@
   "proveedor": [],
   "estado": [],
   "telefonoPersona": [],
-  "asignacion": [],
+  "asignacion": [
+    {
+      "id": "1234",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "1234",
+      "idEmpresaResponsable": "",
+      "idEstado": ""
+    }
+  ],
   "tipoActivo": [
     {
       "id": "665",
@@ -48,6 +122,19 @@
       "idEmpresaResponsable": "adfadf",
       "idEstado": "No Asignado",
       "id": "120"
+    },
+    {
+      "id": "123",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "123",
+      "idEmpresaResponsable": "",
+      "idEstado": "No Asignado"
     }
   ],
   "personas": [],
