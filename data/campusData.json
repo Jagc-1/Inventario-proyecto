@@ -1,147 +1,55 @@
 {
-  "Inventario Campuslands": [
-    {
-      "CodTransaccion": "g",
-      "NFormulario": "rtwer",
-      "idMarca": "dg",
-      "idCategoria": "twg",
-      "idTipo": "g",
-      "ValorUnitario": "g",
-      "idProveedor": "g",
-      "serial": "g",
-      "idEmpresaResponsable": "g",
-      "idEstado": "gr",
-      "id": "001"
-    },
-    {
-      "CodTransaccion": "410",
-      "NFormulario": "222",
-      "idMarca": "55",
-      "idCategoria": "55",
-      "idTipo": "2",
-      "ValorUnitario": "2",
-      "idProveedor": "5",
-      "serial": "1",
-      "idEmpresaResponsable": "52",
-      "idEstado": "2",
-      "id": "123"
-    },
-    {
-      "id": "1",
-      "CodTransaccion": "",
-      "NFormulario": "",
-      "idMarca": "",
-      "idCategoria": "",
-      "idTipo": "",
-      "ValorUnitario": "",
-      "idProveedor": "",
-      "serial": "1",
-      "idEmpresaResponsable": "",
-      "idEstado": ""
-    },
-    {
-      "CodTransaccion": "",
-      "NFormulario": "",
-      "idMarca": "",
-      "idCategoria": "",
-      "idTipo": "",
-      "ValorUnitario": "",
-      "idProveedor": "",
-      "serial": "4",
-      "idEmpresaResponsable": "",
-      "idEstado": "",
-      "id": "4"
-    },
-    {
-      "CodTransaccion": "asdfas",
-      "NFormulario": "f",
-      "idMarca": "dfasf",
-      "idCategoria": "fsdfa",
-      "idTipo": "dfasdf",
-      "ValorUnitario": "",
-      "idProveedor": "asfaf",
-      "serial": "f",
-      "idEmpresaResponsable": "asf",
-      "idEstado": "",
-      "id": "f"
-    }
-  ],
+  "Inventario Campuslands": [],
   "categoriaActivos": [],
-  "Marcas": [
-    {
-      "id": "156",
-      "Nit": "156",
-      "NombreMarca": "gh",
-      "Categoria": "Hardware",
-      "tipo": "Monitor",
-      "price": "asdf",
-      "proveedor": "asdf",
-      "idProveedor": "dsf",
-      "nombreProveedor": "fg"
-    },
-    {
-      "NombreMarca": "nulldsfgs",
-      "Categoria": "null",
-      "tipo": "nullgdfg",
-      "price": "null",
-      "proveedor": "undefined",
-      "idProveedor": "null",
-      "nombreProveedor": "nullfg",
-      "id": "1502"
-    }
-  ],
+  "Marcas": [],
   "tipoPersona": [],
   "tipoMovActivo": [
     {
-      "id": "fer",
-      "CodTransaccion": "123",
-      "nFormulario": "fer",
-      "idMarca": "raer",
-      "idCategoria": "Equipo de Computo",
-      "serial": "132",
+      "CodTransaccion": "124",
+      "nFormulario": "234",
+      "idMarca": "5",
+      "idCategoria": "´´+",
+      "serial": "6",
       "inicio": "",
-      "fin": "",
-      "nitProveedor": "",
-      "motivo": "No Asignado"
-    },
-    {
-      "CodTransaccion": "12",
-      "nFormulario": "uafdsndefined",
-      "idMarca": "sdf",
-      "idCategoria": "asffs",
-      "serial": "undefinedfsadf",
-      "inicio": "undasfafefined",
-      "fin": "undesfdasafined",
-      "nitProveedor": "undeffsdafined",
-      "motivo": "uadsafndefasffined",
-      "id": "13"
+      "fin": "6",
+      "nitProveedor": "56",
+      "motivo": "Dado de Baja por Daño",
+      "id": "234"
     }
   ],
   "historialActivo": [],
   "proveedor": [],
-  "estado": [
-    {
-      "id": "123",
-      "NombreEstado": "adds"
-    },
-    {
-      "NombreEstado": "fdsafadsfaf",
-      "id": "124"
-    }
-  ],
+  "estado": [],
   "telefonoPersona": [],
   "asignacion": [],
-  "tipoActivo": [],
-  "personas": [
+  "tipoActivo": [
     {
-      "CC": "105",
-      "Nombre": "fdsaf",
-      "Tipo": "Persona",
-      "Estado": "Activo",
-      "Numero": "2342325",
-      "Ubicaion": "Casa",
-      "id": "105"
+      "id": "665",
+      "CodTransaccion": "",
+      "NFormulario": "",
+      "idMarca": "",
+      "idCategoria": "",
+      "idTipo": "",
+      "ValorUnitario": "",
+      "idProveedor": "",
+      "serial": "665",
+      "idEmpresaResponsable": "",
+      "idEstado": "No Asignado"
+    },
+    {
+      "CodTransaccion": "dffa",
+      "NFormulario": "",
+      "idMarca": 0,
+      "idCategoria": "",
+      "idTipo": "asdff",
+      "ValorUnitario": "sdf",
+      "idProveedor": "fdasf",
+      "serial": "120",
+      "idEmpresaResponsable": "adfadf",
+      "idEstado": "No Asignado",
+      "id": "120"
     }
   ],
+  "personas": [],
   "detalleMovimiento": []
 }
